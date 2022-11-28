@@ -1,5 +1,7 @@
 class OffersController < ApplicationController
   def new
+    @offer = Offer.new
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -16,11 +18,16 @@ class OffersController < ApplicationController
   end
 
   def show
+    @offer = Offer.all
   end
 
   def index
+    @offer = Offer.all
   end
 
   def destroy
+    @offer.destroy
+
+    redirect_to bookings_path, notice: 'booking was successfully destroyed'
   end
 end
