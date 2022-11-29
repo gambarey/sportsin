@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :offers, only: %i[new create show index destroy] do
     resources :applications, only: %i[new index create]
   end
-  resources :application, ony: %i[index edit update]
+  resources :applications, only: %i[index edit update]
 end
