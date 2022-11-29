@@ -7,7 +7,7 @@ class OffersController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @offer = offer.new(offer_params)
+    @offer = Offer.new(offer_params)
     @offer.user = @user
     @offer.user = current_user
     @offer.status = false
@@ -19,11 +19,11 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.all
+    @offers = Offer.all
   end
 
   def index
-    @offer = Offer.all
+    @offers = Offer.all
   end
 
   def destroy
