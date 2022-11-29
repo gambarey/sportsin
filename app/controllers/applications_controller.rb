@@ -12,7 +12,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new
     @application.offer = @offer
     @application.user = current_user
-    @application.status = "pending"
+    # @application.status = 0
     if @application.save
       redirect_to applications_path, notice: 'You applied for this offer'
     else
