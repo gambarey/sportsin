@@ -8,6 +8,30 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :position,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "position" }%>
+    <%= f.input :role,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "role" }%>
+    <%= f.input :sport_id,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "sport_id" }%>
+    <%= f.input :description,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "description" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
