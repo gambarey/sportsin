@@ -12,7 +12,7 @@
 }
 
 .sidebar{
-  position: fixed;
+  min-height: 100vh;
   top: 66px;
   left: 0;
   width: 220px;
@@ -52,4 +52,9 @@
 
  .hover_collapse .sidebar ul li a .text{
   display: none;
+ }
+
+ .body-content {
+  display: flex;
+  min-height: 100vh;
  }
