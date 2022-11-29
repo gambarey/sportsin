@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  before_action :set_offer, only: %i[show destroy]
   def new
     @offer = Offer.new
     @user = User.find(params[:user_id])
@@ -28,6 +29,16 @@ class OffersController < ApplicationController
   def destroy
     @offer.destroy
 
-    redirect_to bookings_path, notice: 'booking was successfully destroyed'
+    redirect_to offers_path, notice: 'offer was successfully destroyed'
+  end
+
+  private
+
+  def set_offer
+    @offer = Offer.find(params[:id])
+  end
+
+  def offer_params
+    params.require(:offer).permit(:title, :location, :fee, :description)
   end
 end
