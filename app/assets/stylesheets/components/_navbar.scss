@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #042331;
+  background: #2F4858;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,14 +17,20 @@
   left: 0;
   width: 220px;
   height: 100%;
-  background: #042331;
- }
+  background: #2F4858;
+
+}
+
+.punto{
+  list-style-type: none;
+}
 
  .sidebar ul li a{
   display: block;
   padding: 23px 10px;
-  border-bottom: 1px solid #03374e;
+  border-bottom: 1px solid #3D61AD;
   color: #0e94d4;
+  border-color: #1F667C;
  }
 
  .sidebar ul li a .icon{
