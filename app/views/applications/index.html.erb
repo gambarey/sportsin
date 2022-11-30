@@ -2,13 +2,15 @@
     <div class="titleb"><h1>My applications</h1></div>
         <% @applications.each do |application| %>
         <%# insert offer card  %>
-      <div class="application-card">
+      <div class="application-card card">
               <div class="details">
             <h2>Details:</h2>
             <strong> Status: <%= application.status %></strong> <br>
+            <strong> Job: <%= application.offer.title %></strong> <br>
+            <strong> Description: <%= application.offer.description %></strong> <br>
             <strong> Date: </strong> <%= application.created_at %>  <br>
             </div>
-      <div>
+      <div class>
         <%= link_to offers_path, class: 'btn btn-primary rounded acc-btn' do %>
           <i class="fas fa-plus"></i> Accept
         <% end %>
