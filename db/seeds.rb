@@ -7,12 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-Sport.destroy_all
-Club.destroy_all
-User.destroy_all
-Offer.destroy_all
-Achievement.destroy_all
-Application.destroy_all
+# Sport.destroy_all
+# Club.destroy_all
+# User.destroy_all
+# Offer.destroy_all
+# Achievement.destroy_all
+# Application.destroy_all
 
 5.times do
   Sport.create!(
@@ -32,7 +32,6 @@ end
     name: Faker::Name.name,
     last_name: Faker::Name.last_name,
     position: Faker::Sports::Volleyball.position,
-    role: "athlete",
     description: Faker::Sports::Volleyball.formation,
     sport_id: Sport.last.id,
     email: Faker::Internet.email,
