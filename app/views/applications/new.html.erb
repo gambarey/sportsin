@@ -1,2 +1,24 @@
 <h1>Applications#new</h1>
 <p>Find me in app/views/applications/new.html.erb</p>
+<div class="container py-5" style="
+    display: flow-root;">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Apply for this position</h3>
+
+        <%= simple_form_for [@offer, @application] do |f| %>
+          <% if @application.errors.any? %>
+            <div class="alert alert-danger">
+              <h5>You must correct these errors</h5>
+              <ul>
+                <% @application.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          Cover letter <%= f.input :date %>
+          <%= f.submit class: 'btn btn-primary' %> or
+          <%= link_to 'Cancel', offers_path, class: 'text-danger' %>
+        <% end %>
+      </div>
+</div>
