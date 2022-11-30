@@ -1,9 +1,37 @@
 <h1>Offers#index</h1>
 <p>Find me in app/views/offers/index.html.erb</p>
-<div class="main-container d-flex" data-search-movies-target="list">
+<div class="main-container d-flex w-100 h-100" data-search-movies-target="list">
   <p class="h3">
-  <div class="left-container" style="background-color: red;">
+    <div class="left-container w-50 h-100" style="background-color: red;">
+<% @offers.each do |offer| %>
+    <%# insert offer card  %>
+    <div class="container" >
+      <div class="card">
+        <div class="card-left">
+          <img src= "<%= offer.club.photo %>" alt="Person" class="card__image">
+          <p class="card__name"><%= offer.title %>
+          </p>
+          <div class="sport">
+            <%= offer.fee %>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="description">
+            <%= offer.description %></p>
+        </div>
+        <div class="titles">
+          <div class="title">
+            <%= offer.location %>
+          </div>
+          <div class="title">
+            <%= offer.created_at %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="right-container" style="background-color: yellow;">
+<% end %>
+</div>
+  <div class="right-container w-50 h-100" style="background-color: yellow;">
   </div>
 </div>
