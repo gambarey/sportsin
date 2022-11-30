@@ -1,13 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%#= cl_image_tag "Logotipo_circular_reciclaje_ecol%C3%B3gico_verde_1_1_id6roo.png" %>
+      <%= cl_image_tag "Logotipo_circular_reciclaje_ecol%C3%B3gico_verde_1_1_id6roo.png" %>
     <% end %>
 
-    <form class="form-inline my-2 my-lg-0 mr-sm-2">
+    <form class="form-inline my-2 my-lg-0 mr-sm-2" data-controller="search-offers">
       <%# <input class="form-control mr-sm-2" type="search" placeholder="search"   aria-label="Search"> %>
-      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
+      <%= form_with url: offers_path,method: :get, html: {class:
+    "mb-4", data: {search_offers_target: "form"}} do |f| %>
+<%= f.text_field :query, class: "form-control", placeholder:
+                     "Seach", value: params[:query],
+                     data: {
+                        search_seach_target: "input",
+                        action: "keyup->search-offers#update"
+                      } %>
+      <%# method: :get, class: "d-flex" do %>
+        <%#= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Search"
