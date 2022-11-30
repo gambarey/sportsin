@@ -1,34 +1,34 @@
-  <div class="containerb">
-    <div class="titleb"><h1>My applications</h1></div>
-        <% @applications.each do |application| %>
-        <%# insert offer card  %>
-        <div class="container">
-  <div class="card">
-    <div class="card-left">
-      <img src= "<%= application.offer.club.photo %>" alt="Person" class="card__image">
-      <p class="card__name"><%= application.offer.title %>
-      </p>
-        <div class="sport">
-         <%= application.offer.club.name %>
-        </div>
-    </div>
 
-      <div class="grid-container">
-        <div class="description">
-      <%= application.offer.description %></p>
+<div class="containerb">
+  <div class="titleb">
+    <h1>My applications</h1>
+  </div>
+  <% @applications.each do |application| %>
+    <%# insert offer card  %>
+    <div class="container">
+      <div class="card">
+        <div class="card-left">
+          <img src= "<%= application.offer.club.photo %>" alt="Person" class="card__image">
+          <p class="card__name"><%= application.offer.title %>
+          </p>
+          <div class="sport">
+            <%= application.offer.club.name %>
+          </div>
         </div>
-
+        <div class="grid-container">
+          <div class="description">
+            <%= application.offer.description %></p>
+        </div>
         <div class="titles">
           <div class="title">
-          <%= application.status %>
+            <%= application.status %>
           </div>
-
           <div class="title">
-          <%= application.created_at %>
+            <%= application.created_at %>
           </div>
+        </div>
       </div>
     </div>
   </div>
-     </div>
-      <% end %>
-  </div>
+<% end %>
+</div>
