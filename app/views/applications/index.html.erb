@@ -2,6 +2,75 @@
     <div class="titleb"><h1>My applications</h1></div>
         <% @applications.each do |application| %>
         <%# insert offer card  %>
+        <div class="container">
+  <div class="card">
+    <div class="card-left">
+      <img src="#" alt="Person" class="card__image">
+      <p class="card__name"><%= @user.name %>
+      <%= @user.last_name %></p>
+        <div class="sport">Volleyball Player</p>
+        </div>
+    </div>
+
+      <div class="grid-container">
+        <div class="description">
+      <%= @user.description %></p>
+        </div>
+
+        <div class="titles">
+          <div class="title">
+          title1
+          </div>
+
+          <div class="title">
+          title 2
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="achievements">
+  <h2>Titles</h2>
+    <div class="ctitles">
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+    </div>
+  </div>
+
+  <div class="photos">
+  <h2>Photos</h2>
+    <div class="photo">
+    </div>
+  </div>
+
+    <div class="achievements">
+  <h2>Achievements</h2>
+    <div class="ctitles">
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+      <div class="ctitle">
+      </div>
+    </div>
+  </div>
+</div>
       <div class="application-card card">
               <div class="details">
             <h2>Details:</h2>
@@ -10,14 +79,14 @@
             <strong> Description: <%= application.offer.description %></strong> <br>
             <strong> Date: </strong> <%= application.created_at %>  <br>
             </div>
-      <div class>
+      <div class="d-none">
         <%= link_to offers_path, class: 'btn btn-primary rounded acc-btn' do %>
           <i class="fas fa-plus"></i> Accept
         <% end %>
       </div>
 
       <div> <%= link_to applications_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: 'btn btn-danger rounded rj-btn' do %>
-        <i class="fas fa-trash-alt"></i> Reject
+        <i class="fas fa-trash-alt"></i> Cancel
       <% end %>
       </div>
 
