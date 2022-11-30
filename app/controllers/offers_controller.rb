@@ -23,7 +23,12 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+    # @offers = Offer.all
+      # [...]
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "movies/list", locals: { movies: @movies }, formats: [:html] }
+    end
   end
 
   def destroy
