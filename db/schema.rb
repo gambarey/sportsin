@@ -128,6 +128,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_143304) do
   add_foreign_key "clubs", "sports"
   add_foreign_key "messages", "clubs"
   add_foreign_key "messages", "users"
-  add_foreign_key "offers", "users"
+  add_foreign_key "offers", "clubs"
   add_foreign_key "users", "sports"
 end
