@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_151835) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_093944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,9 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_151835) do
   create_table "applications", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.bigint "offer_id"
-    t.integer "status"
+    t.bigint "user_id"
+    t.integer "status", default: 0
     t.index ["offer_id"], name: "index_applications_on_offer_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
@@ -82,8 +82,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_151835) do
     t.integer "fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_offers_on_user_id"
+    t.bigint "club_id"
+    t.index ["club_id"], name: "index_offers_on_club_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -117,6 +117,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_151835) do
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users"
   add_foreign_key "clubs", "sports"
-  add_foreign_key "offers", "users"
+  add_foreign_key "offers", "clubs"
   add_foreign_key "users", "sports"
 end
