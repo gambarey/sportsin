@@ -27,10 +27,10 @@
                 <%= offer.created_at %> <br>
                 <%= offer.location %>
               </div>
-              <div class="title">
-                <a href="#">
-                  <span class="text" style="font-size: 30px">More info</span>
-                </a>
+              <div class="title" data-controller="apply">
+                <button label="More info" data-apply-target="more_info_btn">
+      <i class="btn btn-primary" data-action="click->apply#displayInfo"></i>
+    </button>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container w-50 h-100" style="background-color: yellow;">
+  <div class="right-container w-50 h-100" style="background-color: yellow;" data-controller="apply" data-edit-movie-target="side-pane">
     <div class="grid-container">
       <div class="description">
         <%= @current_offer.description %></p>
@@ -54,14 +54,16 @@
           <span class="text">Contact</span>
         </a>
       </div>
-      <div class="title" data-apply-target="apply" action="click->apply#create-application">
+      <div class="title" data-apply-target="apply_btn" action="click->apply#createApplication">
         <%# <a href="#">
           <span class="icon"><i class="fa fa-id-card"></i></span>
           <span class="text">Apply</span>
         </a> %>
-        <%= button_to "Apply", "offer/#{@offer_id}/applications/new", method: :create %>
-        <%# <%= render "applications/form", application: @application %> %>
-        <%# <%= link_to "Apply", :method=> "applications#create" %> %>
+        <button aria-label="Apply">
+          <i class="title" data-action="click->edit-movie#displayForm"></i>
+        </button>
+        <%# <%= render "applications/form", application: @application %>
+        <%# <%= link_to "Apply", :method=> "applications#create" %>
       </div>
     </div>
   </div>
