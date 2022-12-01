@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :applications
   has_many :achievements
   has_many :club_histories
+  has_many :clubs, through: :club_histories
+
   belongs_to :sport
   has_one_attached :photo
 end
