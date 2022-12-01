@@ -5,10 +5,10 @@
   </div>
   <% @applications.each do |application| %>
     <%# insert offer card  %>
-    <div class="container">
+    <div class="container myapps_cont">
       <div class="card">
         <div class="card-left">
-          <img src= "<%= application.offer.club.photo %>" alt="Person" class="card__image">
+          <img src= "<%= application.offer.club.photo %>" alt="Club" class="card__image">
           <p class="card__name"><%= application.offer.title %>
           </p>
           <div class="sport">
@@ -17,7 +17,7 @@
         </div>
         <div class="grid-container">
           <div class="description">
-            <%= application.offer.description %></p>
+            <p><%= application.offer.description %></p>
         </div>
         <div class="titles">
           <div class="title">

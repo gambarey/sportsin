@@ -41,7 +41,7 @@ club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
 puts "club3 created!"
 club4 = Club.create(name: 'Sevilla C.D', sport_id: sport2.id)
 puts "club4 created!"
-club5 = Club.create(name: 'Cuenca C.D', sport_id: sport4.id)
+club5 = Club.create(name: 'Cuenca C.D', sport_id: sport2.id)
 puts "club5 created!"
 # 5.times do
 #   Club.create!(
@@ -96,8 +96,24 @@ offer1 = Offer.create(
   fee: 3000,
   club_id: club4.id
 )
-puts "offer1 created!"
 
+offer2 = Offer.create(
+  title: 'Needed tennis player for Barcelona C.D',
+  location: 'Barcelona',
+  description: 'Our team needs a Tennis player for our team in Lugo',
+  fee: 1000,
+  club_id: club3.id
+)
+puts "offer2 created!"
+
+offer3 = Offer.create(
+  title: 'Cuenca C.D needs a libero',
+  location: 'Cuenca',
+  description: 'Urgent Libero needed',
+  fee: 2000,
+  club_id: club5.id
+)
+puts "offer3 created!"
 # 10.times do
 #   Offer.create!(
 #     title: Faker::Sports::Volleyball.position,
@@ -115,6 +131,17 @@ achievement1 = Achievement.create(
 )
 puts "achievement1 created!"
 
+achievement2 = Achievement.create(
+  name: 'Winner of the Volleyball cup in Brazil',
+  user_id: user3.id
+)
+puts "achievement2 created!"
+
+achievement3 = Achievement.create(
+  name: 'Nominated to best striker in 2022',
+  user_id: user1.id
+)
+puts "achievement3 created!"
 # 5.times do
 #   Achievement.create!(
 #     name: Faker::Sports::Volleyball.position,
@@ -126,10 +153,16 @@ puts "achievement1 created!"
 #application
 application1 = Application.create(
   status: 0,
-  user_id: User.last.id,
+  user_id: user3.id,
   offer_id: offer1.id
 )
+puts "application1 created!"
 
+application2 = Application.create(
+  status: 0,
+  user_id: user2.id,
+  offer_id: offer2.id
+)
 # 3.times do
 #   Application.create!(
 #     status: rand(0..2),
