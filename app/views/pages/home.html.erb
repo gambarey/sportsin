@@ -1,112 +1,94 @@
 <div class="container">
   <div class="card">
     <div class="card-left">
-<%= cl_image_tag @user.photo.key, class:"card__image" %>
+      <%# <#%= cl_image_tag @user.photo.key, class:"card__image" %> %>
       <p class="card__name"><%= @user.name %>
-      <%= @user.last_name %></p>
-        <div class="sport">Volleyball Player</p>
-        </div>
-    </div>
-
-      <div class="grid-container">
-        <div class="description">
-      <%= @user.description %></p>
-        </div>
-
-        <div class="titles">
-          <div class="title">
-            <div>
-            <i class="fa fa-trophy trophy" aria-hidden="true"></i>
-            </div>
-            <div>
-            <% @user.achievements.each do |achievement| %>
-            <%= achievement.name %>
-            <% end %>
-            </div>
-          </div>
-
-          <div class="title">
-          <i class="fa fa-trophy trophy" aria-hidden="true"></i>
-
-          </div>
-      </div>
+        <%= @user.last_name %></p>
+      <div class="sport">Volleyball Player</p>
     </div>
   </div>
+  <div class="card-right">
+    <div class="grid-container">
+      <div class="description">
+        <%= @user.description %></p>
+      </div>
+    </div>
+    <div class="titles">
+      <% @user.achievements.first(2).each do |achievement| %>
+        <div class="title">
+          <div >
+            <i class="fa-solid fa-trophy trophy"></i>
+          </div>
+          <div class="Adescrip">
+            <%= achievement.name %> <br>
+            <%= achievement.description %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-  <div class="icard">
+<div class="icard">
   <h2>Titles</h2>
-    <div class="ctitles">
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
+    <div class="titles">
+      <% @user.achievements.first(6).each do |achievement| %>
+        <div class="title">
+          <div >
+            <i class="fa-solid fa-trophy trophy"></i>
+          </div>
+          <div class="Adescrip">
+            <%= achievement.name %> <br>
+            <%= achievement.description %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  </div>
+</div>
 
-  <div class="icard">
-  <h2>Photos</h2>
-    <div class="photo">
-    </div>
-  </div>
-
-  <div class="icard">
+<div class="icard">
   <h2>Achievements</h2>
-    <div class="ctitles">
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
+  <div class="titles">
+      <% @user.achievements.first(6).each do |achievement| %>
+        <div class="title">
+          <div >
+            <i class="fa-solid fa-trophy trophy"></i>
+          </div>
+          <div class="Adescrip">
+            <%= achievement.name %> <br>
+            <%= achievement.description %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  </div>
-
-  <div class="icard videos">
+</div>
+<div class="icard videos">
   <h2>Videos</h2>
-    <div>
-<iframe class="video" src="https://www.youtube.com/embed/j3D5h94YEoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
-<iframe class="video" src="https://www.youtube.com/embed/AYFlH11wUDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
-
-    </div>
+  <div>
+    <iframe class="video" src="https://www.youtube.com/embed/j3D5h94YEoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/AYFlH11wUDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
   </div>
-
-  <div class="icard">
+</div>
+<div class="icard">
   <h2>Clubs History</h2>
-    <div class="ctitles">
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
-      <div class="ctitle">
-      </div>
+  <div class="ctitles">
+    <div class="ctitle">
+    </div>
+    <div class="ctitle">
+    </div>
+    <div class="ctitle">
+    </div>
+    <div class="ctitle">
+    </div>
+    <div class="ctitle">
+    </div>
+    <div class="ctitle">
     </div>
   </div>
-
-  <div class="icard">
+</div>
+<div class="icard">
   <h2>Games Stats</h2>
-    <div class="stats">
-    </div>
+  <div class="stats">
   </div>
-
-
+</div>
 </div>
