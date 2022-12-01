@@ -1,3 +1,4 @@
+<% @current_offer= @offers.first %></p>
 <div class="titleb">
   <h1>Offers matching your search</h1>
   <%# <p>Find me in app/views/offers/index.html.erb</p> %>
@@ -23,10 +24,10 @@
             </div>
             <div class="titles">
               <div class="title">
+                <%= offer.created_at %> <br>
                 <%= offer.location %>
               </div>
               <div class="title">
-                <%= offer.created_at %> <br>
                 <a href="#">
                   <span class="text" style="font-size: 30px">More info</span>
                 </a>
@@ -40,8 +41,12 @@
   <div class="right-container w-50 h-100" style="background-color: yellow;">
     <div class="grid-container">
       <div class="description">
-        <%= @offers.first.description %></p>
+        <%= @current_offer.description %></p>
     </div>
+    <div class="description"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <div class="titles" data-controller="apply">
       <div class="title" data-apply-target="contact">
         <a href="#">
@@ -54,7 +59,9 @@
           <span class="icon"><i class="fa fa-id-card"></i></span>
           <span class="text">Apply</span>
         </a> %>
-        <%= link_to "Apply", :method=> "applications#create" %>
+        <%= button_to "Apply", "offer/#{@offer_id}/applications/new", method: :create %>
+        <%# <%= render "applications/form", application: @application %> %>
+        <%# <%= link_to "Apply", :method=> "applications#create" %> %>
       </div>
     </div>
   </div>
