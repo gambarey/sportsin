@@ -10,7 +10,7 @@
       <%= form_with url: offers_path,method: :get, html: {class:
     "mb-4", data: {search_offers_target: "form"}} do |f| %>
 <%= f.text_field :query, class: "form-control", placeholder:
-                     "Seach", value: params[:query],
+                     "Search", value: params[:query],
                      data: {
                         search_seach_target: "input",
                         action: "keyup->search-offers#update"
