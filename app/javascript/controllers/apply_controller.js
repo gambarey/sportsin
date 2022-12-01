@@ -1,14 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
-static targets = ["more_info_btn", "side_pane"] // Add the new target
+
 
 // Connects to data-controller="apply"
 export default class extends Controller {
+  static targets = ["more_info_btn", "side_pane"] // Add the new target
   connect() {
     console.log("hello from apply controller")
 
   }
 displayInfo() {
-  @current_offer = this.
+  // @current_offer = this.
 }
 
   update(event) {
@@ -33,5 +34,5 @@ displayInfo() {
       body: new FormData(this.apply_btnTarget)
     })
   }
-  
+
 }

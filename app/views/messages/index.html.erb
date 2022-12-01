@@ -1,0 +1,15 @@
+<div class="container-messages">
+  <h1>#<%= "Inbox" %></h1>
+
+  <div class="messages">
+    <% Message.all.each do |message| %>
+      <div id="message-<%= message.id %>">
+        <small>
+          <strong><%= message.user %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

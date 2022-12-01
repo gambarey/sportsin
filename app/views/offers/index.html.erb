@@ -1,7 +1,5 @@
-<% @current_offer= @offers.first %></p>
 <div class="titleb">
   <h1>Offers matching your search</h1>
-  <%# <p>Find me in app/views/offers/index.html.erb</p> %>
 </div>
 <div class="main-container card d-flex h-100" data-search-movies-target="list">
   <p class="h3">
@@ -24,13 +22,13 @@
             </div>
             <div class="titles">
               <div class="title">
-                <%= offer.created_at %> <br>
+                <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
               </div>
               <div class="title" data-controller="apply">
                 <button label="More info" data-apply-target="more_info_btn">
-      <i class="btn btn-primary" data-action="click->apply#displayInfo"></i>
-    </button>
+                  <i class="btn btn-primary" data-action="click->apply#displayInfo"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -39,33 +37,5 @@
     <% end %>
   </div>
   <div class="right-container w-50 h-100" style="background-color: yellow;" data-controller="apply" data-edit-movie-target="side-pane">
-    <div class="grid-container">
-      <div class="description">
-        <%= @current_offer.description %></p>
-    </div>
-    <div class="description"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <div class="titles" data-controller="apply">
-      <div class="title" data-apply-target="contact">
-        <a href="#">
-          <span class="icon"><i class="fa fa-id-card"></i></span>
-          <span class="text">Contact</span>
-        </a>
-      </div>
-      <div class="title" data-apply-target="apply_btn" action="click->apply#createApplication">
-        <%# <a href="#">
-          <span class="icon"><i class="fa fa-id-card"></i></span>
-          <span class="text">Apply</span>
-        </a> %>
-        <button aria-label="Apply">
-          <i class="title" data-action="click->edit-movie#displayForm"></i>
-        </button>
-        <%# <%= render "applications/form", application: @application %>
-        <%# <%= link_to "Apply", :method=> "applications#create" %>
-      </div>
-    </div>
+  <%= render "side_pane", offer: @current_offer, marker: @marker %>
   </div>
-</div>
-</div>
