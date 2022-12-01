@@ -68,7 +68,7 @@
 
 .title {
   border: 2px solid #22ecae;
-  width: 23vw;
+  width: 22vw;
   border-radius: 5px;
 }
 
@@ -117,4 +117,20 @@
   border: 2px solid #22ecae;
   width: 21vw;
   border-radius: 5px;
+}
+
+.video {
+  width: 450px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: -20px;
+}
+
+.videos {
+  display: flex;
+}
+
+.trophy {
+  
 }
