@@ -1,37 +1,62 @@
-<h1>Offers#index</h1>
-<p>Find me in app/views/offers/index.html.erb</p>
-<div class="main-container d-flex w-100 h-100" data-search-movies-target="list">
+<div class="titleb">
+  <h1>Offers matching your search</h1>
+  <%# <p>Find me in app/views/offers/index.html.erb</p> %>
+</div>
+<div class="main-container card d-flex h-100" data-search-movies-target="list">
   <p class="h3">
-    <div class="left-container w-50 h-100" style="background-color: red;">
-<% @offers.each do |offer| %>
-    <%# insert offer card  %>
-    <div class="container" >
-      <div class="card">
-        <div class="card-left">
-          <img src= "<%= offer.club.photo %>" alt="Person" class="card__image">
-          <p class="card__name"><%= offer.title %>
-          </p>
-          <div class="sport">
-            <%= offer.fee %>
-          </div>
-        </div>
-        <div class="grid-container">
-          <div class="description">
-            <%= offer.description %></p>
-        </div>
-        <div class="titles">
-          <div class="title">
-            <%= offer.location %>
-          </div>
-          <div class="title">
-            <%= offer.created_at %>
+    <div class="left-container w-50 h-100 p-3" style="background-color: red;">
+      <% @offers.each do |offer| %>
+        <%# insert offer card  %>
+        <div class="container" style="zoom: 40%">
+          <div class="card">
+            <div class="card-left">
+              <img src= "<%= offer.club.photo %>" alt="Person" class="card__image">
+              <p class="card__name"><%= offer.title %>
+              </p>
+              <div class="sport">
+                <%= "#{offer.fee} €" %>
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="description">
+                <%= offer.description %></p>
+            </div>
+            <div class="titles">
+              <div class="title">
+                <%= offer.location %>
+              </div>
+              <div class="title">
+                <%= offer.created_at %> <br>
+                <a href="#">
+                  <span class="text" style="font-size: 30px">More info</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    <% end %>
+  </div>
+  <div class="right-container w-50 h-100" style="background-color: yellow;">
+    <div class="grid-container">
+      <div class="description">
+        <%= @offers.first.description %></p>
+    </div>
+    <div class="titles" data-controller="apply">
+      <div class="title" data-apply-target="contact">
+        <a href="#">
+          <span class="icon"><i class="fa fa-id-card"></i></span>
+          <span class="text">Contact</span>
+        </a>
+      </div>
+      <div class="title" data-apply-target="apply" action="click->apply#create-application">
+        <%# <a href="#">
+          <span class="icon"><i class="fa fa-id-card"></i></span>
+          <span class="text">Apply</span>
+        </a> %>
+        <%= link_to "Apply", :method=> "applications#create" %>
+      </div>
     </div>
   </div>
-<% end %>
 </div>
-  <div class="right-container w-50 h-100" style="background-color: yellow;">
-  </div>
 </div>
