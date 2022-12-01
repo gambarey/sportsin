@@ -88,6 +88,15 @@ puts "user3 created!"
 #   )
 # end
 
+#offer:
+offer1 = Offer.create(
+  title: 'Needed libero in Sevilla C.D',
+  location: 'Sevilla',
+  description: 'Lets win the Liga. We need a Libero for our volleyball team',
+  fee: 3000,
+  club_id: club4.id
+)
+puts "offer1 created!"
 
 # 10.times do
 #   Offer.create!(
@@ -99,6 +108,13 @@ puts "user3 created!"
 #   )
 # end
 
+# achievements:
+achievement1 = Achievement.create(
+  name: 'Winner State Tournament in France',
+  user_id: user2.id
+)
+puts "achievement1 created!"
+
 # 5.times do
 #   Achievement.create!(
 #     name: Faker::Sports::Volleyball.position,
@@ -106,6 +122,13 @@ puts "user3 created!"
 #     user: User.last
 #   )
 # end
+
+#application
+application1 = Application.create(
+  status: 0,
+  user_id: User.last.id,
+  offer_id: offer1.id
+)
 
 # 3.times do
 #   Application.create!(
