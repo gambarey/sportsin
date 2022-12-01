@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-left">
-      <img src="#" alt="Person" class="card__image">
+<%= cl_image_tag @user.photo.key, class:"card__image" %>
       <p class="card__name"><%= @user.name %>
       <%= @user.last_name %></p>
         <div class="sport">Volleyball Player</p>
@@ -15,11 +15,19 @@
 
         <div class="titles">
           <div class="title">
-          title1
+            <div>
+            <i class="fa fa-trophy trophy" aria-hidden="true"></i>
+            </div>
+            <div>
+            <% @user.achievements.each do |achievement| %>
+            <%= achievement.name %>
+            <% end %>
+            </div>
           </div>
 
           <div class="title">
-          title 2
+          <i class="fa fa-trophy trophy" aria-hidden="true"></i>
+
           </div>
       </div>
     </div>
@@ -67,9 +75,12 @@
     </div>
   </div>
 
-  <div class="icard">
+  <div class="icard videos">
   <h2>Videos</h2>
-    <div class="video">
+    <div>
+<iframe class="video" src="https://www.youtube.com/embed/j3D5h94YEoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
+<iframe class="video" src="https://www.youtube.com/embed/AYFlH11wUDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
+
     </div>
   </div>
 
