@@ -8,23 +8,23 @@
     <div class="container myapps_cont">
       <div class="card ">
         <div class="card-left no_wrap">
-          <img src= "<%= application.offer.club.photo %>" alt="Club" class="card__image">
+          <%= cl_image_tag application.offer.club.photo.key, class:"card__image img_club", alt:"club"%>
           <p class="card__name"><%= application.offer.title %>
           </p>
           <div class="sport">
-            <%= application.offer.club.name %>
+            <p><%= application.offer.club.name %></p>
           </div>
         </div>
         <div class="grid-container">
-          <div class="description">
+          <div class="description des_club">
             <p><%= application.offer.description %></p>
         </div>
         <div class="titles">
-          <div class="title">
-            <%= application.status %>
+          <div class="title status">
+            <p><%= application.status %></p>
           </div>
-          <div class="title">
-            <%= application.created_at %>
+          <div class="title created">
+            <p><%= application.created_at %></p>
           </div>
         </div>
       </div>
