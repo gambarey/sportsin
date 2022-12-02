@@ -29,7 +29,7 @@
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
   width: 70vw;
-  height: 40vh;
+  //height: 40vh;
   margin: 25px;
   display: flex;
   flex-direction: row;
@@ -72,7 +72,6 @@
 
 .title {
   border: 2px solid #22ecae;
-  width: 24vw;
   border-radius: 5px;
   display: flex;
   margin: 5px;
@@ -80,11 +79,12 @@
 }
 
 .titles {
-  display: flex;
-  justify-content: space-between;
   //height: 10vh;
   margin-top: 25px;
-  width: 51vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .body-content {

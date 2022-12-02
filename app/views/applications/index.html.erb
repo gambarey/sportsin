@@ -1,4 +1,3 @@
-
 <div class="containerb">
   <div class="titleb">
     <h1>My applications</h1>
@@ -18,17 +17,17 @@
         <div class="grid-container">
           <div class="description des_club">
             <p><%= application.offer.description %></p>
-        </div>
-        <div class="titles">
-          <div class="title status">
-            <p><%= application.status %></p>
           </div>
-          <div class="title created">
-            <p><%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
+          <div class="titles">
+            <div class="title status">
+              <p><%= application.status %></p>
+            </div>
+            <div class="title created">
+              <p><%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
