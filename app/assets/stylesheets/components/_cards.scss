@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: row;
   border: 1px solid #eaf3e9;
+  justify-content: space-between;
 }
 
 .card__name {
@@ -64,12 +65,18 @@
   height: 21vh;
   border-radius: 5px;
   background-color: #1E2F39;
+  width: 48vw;
+  padding: 9px;
+  font-size: 20px;
 }
 
 .title {
   border: 2px solid #22ecae;
-  width: 23vw;
+  width: 24vw;
   border-radius: 5px;
+  display: flex;
+  margin: 5px;
+  margin: 0px 27px;
 }
 
 .titles {
@@ -77,6 +84,7 @@
   justify-content: space-between;
   height: 10vh;
   margin-top: 25px;
+  width: 51vw;
 }
 
 .body-content {
@@ -117,4 +125,46 @@
   border: 2px solid #22ecae;
   width: 21vw;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.video {
+  width: 450px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: -20px;
+}
+
+.videos {
+  display: flex;
+}
+
+.trophy {
+  font-size: 70px;
+  margin: 10px;
+}
+
+.Adescrip {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.card-right {
+  margin-right: 50px;
+}
+
+.stats {
+  width: 1000px;
+  height: 300px;
+  border-radius: 5px;
+  margin-top: -40px;
+}
+
+.club {
+  width: 6vw;
+  height: 10vh;
+  object-fit: contain;
 }

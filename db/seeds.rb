@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require "open-uri"
 
 Achievement.destroy_all
 Application.destroy_all
@@ -26,29 +27,25 @@ puts "sport4 created!"
 sport5 = Sport.create(name: 'Tennis')
 puts "sport5 created!"
 
-# 5.times do
-#   Sport.create!(
-#     name: Faker::Sports.sport
-#   )
-# end
-
 # Clubs
-club1 = Club.create(name: 'Lugo M.B', sport_id: sport5.id)
-puts "club1 created!"
-club2 = Club.create(name: 'Madrid S.C', sport_id: sport3.id)
-puts "club2 created!"
-club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
-puts "club3 created!"
-club4 = Club.create(name: 'Sevilla C.D', sport_id: sport2.id)
+# club1 = Club.create(name: 'Lugo M.B', sport_id: sport5.id)
+# puts "club1 created!"
+# club2 = Club.create(name: 'Madrid S.C', sport_id: sport3.id)
+# puts "club2 created!"
+# club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
+# puts "club3 created!"
+
+club_photo4 = URI.open("https://avatars.githubusercontent.com/u/16381584?s=80&u=7856cc884e5dc722677145a0ac750b0e6dba4dd8&v=4")
+club4 = Club.new(name: 'Sevilla C.D', sport_id: sport2.id)
+club4.photo.attach(io: club_photo4, filename: "umux94.png")
+club4.save
 puts "club4 created!"
-club5 = Club.create(name: 'Cuenca C.D', sport_id: sport4.id)
+
+club_photo2 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669899891/development/Cuenca_as6rzx.png")
+club5 = Club.create(name: 'Cuenca C.D', sport_id: sport2.id)
+club5.photo.attach(io: club_photo2, filename: "Cuenca.png", content_type: "image/png")
+club5.save
 puts "club5 created!"
-# 5.times do
-#   Club.create!(
-#     name: Faker::Sports::Volleyball.team,
-#     sport_id: Sport.last.id
-#   )
-# end
 
 # User:
 
@@ -63,7 +60,8 @@ user2 = User.create(
   description: 'Winner of the last regional slam in France',
   sport_id: sport5.id,
   email: 'maria@sportsin.com',
-  password: 123456)
+  password: 123456
+)
 puts "user2 created!"
 
 user3 = User.create(
@@ -73,20 +71,11 @@ user3 = User.create(
   description: 'Winner of the World Cup 2023',
   sport_id: sport2.id,
   email: 'felipe@sportsin.com',
-  password: 123456)
+  password: 123456
+)
+profile1 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669900617/development/IMG_0861_sweidl.jpg")
+user3.photo.attach(io: profile1, filename: "IMG_0861_sweidl.jpg", content_type: "image/jpg")
 puts "user3 created!"
-
-# 3.times do
-#   User.create!(
-#     name: Faker::Name.name,
-#     last_name: Faker::Name.last_name,
-#     position: Faker::Sports::Volleyball.position,
-#     description: Faker::Sports::Volleyball.formation,
-#     sport_id: Sport.last.id,
-#     email: Faker::Internet.email,
-#     password: 123456
-#   )
-# end
 
 #offer:
 offer1 = Offer.create(
@@ -97,43 +86,138 @@ offer1 = Offer.create(
   club_id: club4.id
 )
 puts "offer1 created!"
+offer2 = Offer.create(
+  title: 'Needed setter player for Sevilla C.D',
+  location: 'Sevilla',
+  description: 'Our team needs a sette position player for our team in Seville',
+  fee: 1000,
+  club_id: club4.id
+)
+puts "offer2 created!"
 
-# 10.times do
-#   Offer.create!(
-#     title: Faker::Sports::Volleyball.position,
-#     location: Faker::Address.city,
-#     description: Faker::Job.position,
-#     fee: rand(2000..5000),
-#     club: Club.last
-#   )
-# end
+offer3 = Offer.create(
+  title: 'Cuenca C.D needs a libero',
+  location: 'Cuenca',
+  description: 'Urgent Libero needed',
+  fee: 2000,
+  club_id: club5.id
+)
+puts "offer3 created!"
 
-# achievements:
+offer4 = Offer.create(
+  title: 'Looking for a Middle Blocker at Sevilla C.D',
+  location: 'Sevilla',
+  description: 'Our team needs a Middle Blocker position player for our team in Seville',
+  fee: 1000,
+  club_id: club4.id
+)
+puts "offer4 created!"
+
+# achievements TITLES:
+
 achievement1 = Achievement.create(
-  name: 'Winner State Tournament in France',
-  user_id: user2.id
+  name: 'Winner State Tournament in France 2021',
+  sort: 'title',
+  user_id: user3.id
+)
+puts "title created!"
+
+achievement2 = Achievement.create(
+  name: 'Winner of the Volleyball cup in Brazil',
+  user_id: user3.id,
+  sort: "Title"
+)
+puts "title2 created!"
+
+achievement3 = Achievement.create(
+  name: 'Best defender in 2022',
+  user_id: user3.id,
+  sort: "Title"
+)
+puts "title3 created!"
+achievement4 = Achievement.create(
+  name: 'Best libero in 2021',
+  user_id: user3.id,
+  sort: "Title"
+)
+puts "title4 created!"
+
+achievement5 = Achievement.create(
+  name: 'Winner State Tournament in France 2020',
+  user_id: user3.id,
+  sort: "Title"
+)
+puts "title5 created!"
+
+achievement6 = Achievement.create(
+  name: 'Winner of the Volleyball cup in Peru',
+  user_id: user3.id,
+  sort: "Title"
+)
+puts "title6 created!"
+
+#Achievements ACHIEVEMENTS:
+
+achievement7 = Achievement.create(
+  name: 'Nominated to best defender in 2022',
+  user_id: user3.id,
+  sort: "Achievement"
 )
 puts "achievement1 created!"
+achievement8 = Achievement.create(
+  name: 'Nominated toBest libero in 2021',
+  user_id: user3.id,
+  sort: "Achievement"
+)
+puts "achievement2 created!"
 
-# 5.times do
-#   Achievement.create!(
-#     name: Faker::Sports::Volleyball.position,
-#     description: Faker::Esport.league,
-#     user: User.last
-#   )
-# end
 
-#application
+achievement9 = Achievement.create(
+  name: 'Nominated to Best defender in 2022',
+  user_id: user3.id,
+  sort: "Achievement"
+)
+puts "achievement3 created!"
+
+achievement10 = Achievement.create(
+  name: 'Nominated to Best libero in 2021',
+  user_id: user3.id,
+  sort: "Achievement"
+)
+puts "achievement4 created!"
+
+achievemen11 = Achievement.create(
+  name: 'Winner State Tournament in France 2020',
+  user_id: user3.id,
+  sort: "Achievement"
+)
+puts "achievement5 created!"
+
+achievement12 = Achievement.create(
+  name: 'Winner of the Volleyball cup in Peru',
+  user_id: user3.id,
+  sort: "Achievement"
+)
+puts "achievement6 created!"
+
+# application
+
 application1 = Application.create(
   status: 0,
-  user_id: User.last.id,
+  user_id: user3.id,
   offer_id: offer1.id
 )
+puts "application1 created!"
 
-# 3.times do
-#   Application.create!(
-#     status: rand(0..2),
-#     user_id: User.last.id,
-#     offer_id: Offer.last.id
-#   )
-# end
+application2 = Application.create(
+  status: 0,
+  user_id: user3.id,
+  offer_id: offer2.id
+)
+puts "application2 created!"
+application3 = Application.create(
+  status: 0,
+  user_id: user3.id,
+  offer_id: offer4.id
+)
+puts "application3 created!"
