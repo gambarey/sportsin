@@ -3,7 +3,7 @@
 </div>
 <div class="main-container card d-flex h-100" id="list" data-search-offers-target="list">
   <p class="h3">
-    <div class="left-container w-50 h-100 p-3" style="background-color: red;">
+    <div class="left-container w-50 h-100 p-3">
       <% @offers.each do |offer| %>
         <%# insert offer card  %>
         <div class="container" style="zoom: 40%">
@@ -26,9 +26,10 @@
                 <%= offer.location %>
               </div>
               <div class="title" data-controller="apply">
-                <button label="More info" data-apply-target="more_info_btn">
-                  <i class="btn btn-primary" data-action="click->apply#displayInfo"></i>
-                </button>
+      <a href="#">
+          <span class="icon"><i class="fa fa-id-card"></i></span>
+          <span class="text">More info</span>
+        </a>
               </div>
             </div>
           </div>
@@ -36,6 +37,6 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container w-50 h-100" style="background-color: yellow;" data-controller="apply" data-edit-movie-target="side-pane">
+  <div class="right-container w-50 h-100" data-controller="apply" data-edit-movie-target="side-pane">
   <%= render "side_pane", offer: @current_offer, marker: @marker %>
   </div>
