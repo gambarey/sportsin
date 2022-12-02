@@ -35,7 +35,7 @@ puts "sport5 created!"
 # club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
 # puts "club3 created!"
 
-club_photo4 = URI.open("https://avatars.githubusercontent.com/u/16381584?s=80&u=7856cc884e5dc722677145a0ac750b0e6dba4dd8&v=4")
+club_photo4 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669900052/development/Sevilla_umux94.png")
 club4 = Club.new(name: 'Sevilla C.D', sport_id: sport2.id)
 club4.photo.attach(io: club_photo4, filename: "umux94.png")
 club4.save
@@ -212,7 +212,7 @@ puts "application1 created!"
 application2 = Application.create(
   status: 0,
   user_id: user3.id,
-  offer_id: offer2.id
+  offer_id: offer3.id
 )
 puts "application2 created!"
 application3 = Application.create(
