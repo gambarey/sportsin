@@ -93,6 +93,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_162459) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "club_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["club_id"], name: "index_offers_on_club_id"
   end
 

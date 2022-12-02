@@ -1,8 +1,7 @@
 <div class="titleb">
   <h1>Offers matching your search</h1>
-  <%# <p>Find me in app/views/offers/index.html.erb</p> %>
 </div>
-<div class="main-container card d-flex h-100" data-search-movies-target="list">
+<div class="main-container card d-flex h-100" id="list" data-search-offers-target="list">
   <p class="h3">
     <div class="left-container w-50 h-100 p-3" style="background-color: red;">
       <% @offers.each do |offer| %>
@@ -23,13 +22,13 @@
             </div>
             <div class="titles">
               <div class="title">
+                <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
               </div>
-              <div class="title">
-                <%= offer.created_at %> <br>
-                <a href="#">
-                  <span class="text" style="font-size: 30px">More info</span>
-                </a>
+              <div class="title" data-controller="apply">
+                <button label="More info" data-apply-target="more_info_btn">
+                  <i class="btn btn-primary" data-action="click->apply#displayInfo"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -37,26 +36,6 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container w-50 h-100" style="background-color: yellow;">
-    <div class="grid-container">
-      <div class="description">
-        <%= @offers.first.description %></p>
-    </div>
-    <div class="titles" data-controller="apply">
-      <div class="title" data-apply-target="contact">
-        <a href="#">
-          <span class="icon"><i class="fa fa-id-card"></i></span>
-          <span class="text">Contact</span>
-        </a>
-      </div>
-      <div class="title" data-apply-target="apply" action="click->apply#create-application">
-        <%# <a href="#">
-          <span class="icon"><i class="fa fa-id-card"></i></span>
-          <span class="text">Apply</span>
-        </a> %>
-        <%= link_to "Apply", :method=> "applications#create" %>
-      </div>
-    </div>
+  <div class="right-container w-50 h-100" style="background-color: yellow;" data-controller="apply" data-edit-movie-target="side-pane">
+  <%= render "side_pane", offer: @current_offer, marker: @marker %>
   </div>
-</div>
-</div>

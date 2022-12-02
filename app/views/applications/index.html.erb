@@ -24,7 +24,7 @@
             <p><%= application.status %></p>
           </div>
           <div class="title created">
-            <p><%= application.created_at %></p>
+            <p><%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
           </div>
         </div>
       </div>
