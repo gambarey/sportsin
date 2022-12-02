@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[show destroy]
+  
   def new
     @message = Message.new
     @user = User.find(params[:user_id])
@@ -13,7 +14,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      redirect_to messages_path, notice: 'message was successfully sent'
+      redirect_to messages_path, notice: "message was successfully sent"
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,8 +30,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-
-    redirect_to messages_path, notice: 'message was successfully deleted'
+    redirect_to messages_path, notice: "message was successfully deleted"
   end
 
   private
