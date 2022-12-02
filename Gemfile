@@ -45,7 +45,8 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
-gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "main"
+gem "rails_admin", "3.0"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -65,8 +66,9 @@ group :development do
   gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  gem "rack-mini-profiler"
-  gem "rails_admin", "3.0"
+
+   gem "rack-mini-profiler"
+
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
