@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[show destroy]
-
+  
   def new
     @message = Message.new
     @user = User.find(params[:user_id])
@@ -30,7 +30,6 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-
     redirect_to messages_path, notice: "message was successfully deleted"
   end
 
