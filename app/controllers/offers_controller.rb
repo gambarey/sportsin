@@ -24,12 +24,19 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
-    @current_offer= @offers.second
-      # [...]
-    # respond_to do |format|
-    #   format.html # Follow regular flow of Rails
-    #   format.text { render partial: "movies/list", locals: { movies: @movies }, formats: [:html] }
-    # end
+    @current_offer = @offers.second
+
+    if params[:query].present?
+      sql_query = <<~SQL
+        offers.title @@ :query
+        OR offers.description @@ :query
+        OR offers.location @@ :query
+      SQL
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
+
     @marker =
       {
         lat: @current_offer.geocode[0],

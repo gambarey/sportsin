@@ -66,8 +66,8 @@ puts "user2 created!"
 
 user3 = User.create(
   name: 'Felipe',
-  last_name: 'Hermoso',
-  position: 'Libero',
+  last_name: 'Hernandez',
+  position: 'Setter',
   description: 'Winner of the World Cup 2023',
   sport_id: sport2.id,
   email: 'felipe@sportsin.com',

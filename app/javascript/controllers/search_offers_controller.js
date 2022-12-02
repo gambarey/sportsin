@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "input", "list"]
+  static targets = ["form", "input"]
 
   connect() {
     console.log(this.formTarget)
@@ -14,7 +14,8 @@ export default class extends Controller {
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        this.listTarget.outerHTML = data
+        const list = document.querySelector("#list");
+        console.log(list)
       })
   }
 }
