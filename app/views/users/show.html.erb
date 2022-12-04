@@ -4,23 +4,22 @@
       <img src="#" alt="Person" class="card__image">
       <p class="card__name"><%= @user.name %></p>
         <div class="sport">
-          Volleyball Player
+          <%= @user.sport.name %>
         </div>
     </div>
 
       <div class="grid-container">
-        <div class="description">
-          description
-        </div>
-
-        <div class="titles">
-          <div class="title">
-          title1
+        <h3> Achievements </h3>
+        <% @user.achievements.each do |achievement| %>
+          <div class="card">
+            <div class="card-left">
+              <p class="card__name">
+                <%= achievement&.name %>
+              </p>
+              <div class="sport"><%= achievement.description %></p>
+            </div>
           </div>
-
-          <div class="titlel">
-          title 2
-          </div>
+        <% end %>
       </div>
 
     </div>

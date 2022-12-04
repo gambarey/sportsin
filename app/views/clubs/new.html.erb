@@ -1,15 +1,16 @@
-<h1 class="titleb">Add your Achievements</h1>
+<h1 class="titleb">Register Your Club</h1>
 
-<%= simple_form_for([@achievement]) do |f| %>
+<%= simple_form_for([@club]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name,
                 required: true,
                 autofocus: true %>
-    <%= f.input :description %>
+    <%= f.input :website %>
+    <%= f.input :sport_id, collection: Sport.pluck(:name,:id) %>
     <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
   <div class="form-actions btn btn-primary">
-    <%= f.button :submit, "Create Achievement" %>
+    <%= f.button :submit, "Create Club" %>
   </div>
 <% end %>
