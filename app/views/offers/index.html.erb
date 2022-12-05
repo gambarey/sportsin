@@ -1,13 +1,13 @@
 <div class="titleb">
   <h1>Offers matching your search</h1>
 </div>
-<div class="main-container card d-flex h-100" id="list" data-search-offers-target="list">
+<div class="main-container card d-flex h-100" data-controller="apply" id="list" data-search-offers-target="list">
   <p class="h3">
-    <div class="left-container w-50 h-100 p-3">
-      <% @offers.each do |offer| %>
+    <div class="left-container w-50 h-80 p-2">
+      <% @offers.each_with_index do |offer, index| %>
         <%# insert offer card  %>
-        <div class="container" style="zoom: 40%">
-          <div class="card">
+        <div class="container" style="zoom: 45%">
+          <div class="card-offer">
             <div class="card-left">
               <img src= "<%= offer.club.photo %>" alt="Person" class="card__image">
               <p class="card__name"><%= offer.title %>
@@ -17,19 +17,19 @@
               </div>
             </div>
             <div class="grid-container">
-              <div class="description">
+              <div class="description-offer">
                 <%= offer.description %></p>
             </div>
             <div class="titles">
-              <div class="title">
+              <div class="title-offer">
                 <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
               </div>
-              <div class="title" data-controller="apply">
-      <a href="#">
-          <span class="icon"><i class="fa fa-id-card"></i></span>
-          <span class="text">More info</span>
-        </a>
+              <div class="title-offer-big" >
+                <a href="#" data-action="click->apply#displayInfo" id="<%= index %>" >
+                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="text">More info</span>
+                </a>
               </div>
             </div>
           </div>
@@ -37,6 +37,35 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container w-50 h-100" data-controller="apply" data-edit-movie-target="side-pane">
-  <%= render "side_pane", offer: @current_offer, marker: @marker %>
+  <div class="right-container card-offer w-40 h-100 p-2" style="zoom: 45%">
+   <% @offers.each do |offer| %>
+    <div class="right-container card-offer w-40 h-100 p-2 d-none" data-apply-target="sidePane">
+        <div class="grid-container">
+      <div class="description-offer">
+        <%= offer.description %>
+      </div>
+      <div class="description map" data-controller="map" data-map-marker-value="<%= @marker.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="titles">
+        <div class="title-offer-big" data-apply-target="contact">
+          <a href="/clubs/:club_id/messages/new">
+            <span class="icon"><i class="fa fa-id-card"></i></span>
+            <span class="text">Contact</span>
+          </a>
+        </div>
+        <div class="title-offer-big" data-apply-target="apply_btn" action="click->apply#createApplication">
+          <a href="#">
+          <span class="icon"><i class="fa fa-id-card"></i></span>
+          <span class="text">Apply</span>
+        </a>
+          <%# <button aria-label="Apply">
+            <i class="title" data-action="click->edit-movie#displayForm"></i>
+          </button> %>
+          <%# <%= render "applications/form", application: @application %>
+          <%# <%= link_to "Apply", :method=> "applications#create" %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
   </div>
