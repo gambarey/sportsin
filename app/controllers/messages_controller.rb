@@ -8,10 +8,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @user = current_user
+    @user = current_user
     @message = Message.new(message_params)
-    # @message.user = @user
-    @message.user = current_user
+    @message.user = @user
+    # @message.club = @club
 
     if @message.save
       redirect_to messages_path, notice: "message was successfully sent"
@@ -40,6 +40,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:club_id, :content, :user_id)
+    params.require(:message).permit(:content)
   end
 end

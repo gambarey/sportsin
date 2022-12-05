@@ -37,12 +37,12 @@ class OffersController < ApplicationController
       @offers = Offer.all
     end
 
-    @marker =
-      {
-        lat: @current_offer.geocode[0],
-        lng: @current_offer.geocode[1]
-        # info_window: render_to_string(partial: "info_window", locals: {offer: offer})
-      }
+    # @marker =
+    #   {
+    #     lat: @current_offer.geocode[0],
+    #     lng: @current_offer.geocode[1]
+    #     # info_window: render_to_string(partial: "info_window", locals: {offer: offer})
+    #   }
 
   end
 
