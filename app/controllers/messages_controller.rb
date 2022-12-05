@@ -1,14 +1,14 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[show destroy]
-  
+
   def new
     @message = Message.new
-    @user = User.find(params[:user_id])
-    @club = Club.find(params[:club_id])
+    @user = current_user
+    # @club = Club.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
+    # @user = current_user
     @message = Message.new(message_params)
     # @message.user = @user
     @message.user = current_user

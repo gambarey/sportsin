@@ -3,14 +3,18 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="apply"
 export default class extends Controller {
-  static targets = ["more_info_btn", "side_pane"] // Add the new target
+  static targets = ["sidePane"] // Add the new target
   connect() {
-    console.log("hello from apply controller")
+    console.log("hello from apply controller", this.sidePaneTargets)
 
   }
-displayInfo() {
+displayInfo(event) {
+  //get offer index from event
+  //get sidepane indexes
+  this.sidePaneTargets.forEach(item => item.classList.add("d-none"));
+ let index = event.currentTarget.id
   // @current_offer = this.
-  this.side_paneTarget.classList.toggle("d-none")
+  this.sidePaneTargets[index].classList.remove("d-none")
 }
 
   // update(event) {
