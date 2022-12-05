@@ -11,9 +11,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
+     <% unless current_page?(root_path) %>
     <%= render "shared/navbar" %>
     <div class="body-content">
       <%= render "shared/sidebar" %>
+      <% end %>
       <div class="bodyp">
         <%= yield %>
       </div>

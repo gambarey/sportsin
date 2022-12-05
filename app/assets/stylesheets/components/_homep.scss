@@ -1,0 +1,50 @@
+.bannerh {
+  background-size: cover;
+  background-position: top;
+  padding: 150px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerh h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.bannerh p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btnh {
+background: #22ECAE;
+border: 1px solid #1E2F39;
+border-radius: 25px;
+width: 100px;
+}
+
+.btnh:hover {
+background: #EAF3E9;
+border: 1px solid #22ECAE;
+border-radius: 25px;
+color: #22ECAE;
+}
+
+.containerbh {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerh {
+  background-color: #1E2F39;
+
+}
