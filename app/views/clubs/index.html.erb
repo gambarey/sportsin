@@ -1,0 +1,35 @@
+<% if current_user.owned_clubs.present? %>
+  <div class="container">
+    <h2>My Owned Clubs</h2>
+    <% current_user.owned_clubs.each do |club| %>
+      <div class="card">
+        <div class="card-left">
+          <p class="card__name">
+            <%= club&.name %>
+            <%= club.website %>
+          </p>
+          <div class="sport"><%= club.sport.name %></div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= link_to "Register your club", new_club_path %>
+  </div>
+<% end %>
+
+<div class="container">
+  <h2>My Clubs History</h2>
+  <% @clubs.each do |club| %>
+    <div class="card">
+      <div class="card-left">
+        <p class="card__name">
+          <%= club&.name %>
+          <%= club.website %>
+        </p>
+        <div class="sport"><%= club.sport.name %></div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Add your Club History", new_club_history_path %>
+</div>

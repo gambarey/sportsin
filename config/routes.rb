@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :messages
+  resources :clubs
   resources :users, only: %i[show]
-  resources :achievements, only: %i[new create]
+  resources :club_histories, only: %i[new create]
+  resources :achievements, only: %i[new create index]
   resources :offers, only: %i[new create show index destroy] do
     resources :applications, only: %i[new index create]
   end

@@ -1,4 +1,12 @@
-// Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
+// app/javascript/application.js
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
 import "./controllers"
-import "bootstrap"
+import * as bootstrap from "bootstrap"
+
+document.addEventListener("turbo:load", () => {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+})

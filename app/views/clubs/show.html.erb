@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card">
+    <div class="card-left">
+      <%#= cl_image_tag @user&.photo.key, class:"card__image" %>
+      <p class="card__name">
+        <%= @club&.name %>
+        <%= @club.website %>
+      </p>
+      <div class="sport"><%= @club.sport.name %></p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Players History</h3>
+    <div class="titles">
+      <% @club.users.each do |user| %>
+        <div class="title">
+          <div class="Adescrip">
+            <%= user.first.to_s + user.last_name.to_s %> <br>
+            <%= user.position %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

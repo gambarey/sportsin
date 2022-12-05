@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_162459) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_160543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,9 +62,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_162459) do
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
-  create_table "club_histories", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "club_histories", force: :cascade do |t|
     t.bigint "club_id", null: false
+    t.bigint "user_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.string "jersey_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_club_histories_on_club_id"
+    t.index ["user_id"], name: "index_club_histories_on_user_id"
   end
 
   create_table "clubs", force: :cascade do |t|
@@ -72,7 +79,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_162459) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "sport_id"
+    t.bigint "user_id"
+    t.string "website"
     t.index ["sport_id"], name: "index_clubs_on_sport_id"
+    t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -127,7 +137,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_162459) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applications", "offers"
   add_foreign_key "applications", "users"
+  add_foreign_key "club_histories", "clubs"
+  add_foreign_key "club_histories", "users"
   add_foreign_key "clubs", "sports"
+  add_foreign_key "clubs", "users"
   add_foreign_key "messages", "clubs"
   add_foreign_key "messages", "users"
   add_foreign_key "offers", "clubs"

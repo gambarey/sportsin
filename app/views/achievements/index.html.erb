@@ -1,0 +1,14 @@
+<div class="container">
+  <% @achievements.each do |achievement| %>
+    <div class="card">
+      <div class="card-left">
+        <p class="card__name">
+          <%= achievement&.name %>
+        </p>
+        <div class="sport"><%= achievement.description %></div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Add new Achivement", new_achievement_path %>
+</div>
