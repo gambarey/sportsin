@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 800px;
 }
 
 .bannerh h1 {
@@ -26,7 +27,7 @@
 background: #22ECAE;
 border: 1px solid #1E2F39;
 border-radius: 25px;
-width: 100px;
+width: 110px;
 }
 
 .btnh:hover {
@@ -45,6 +46,94 @@ color: #22ECAE;
 }
 
 .containerh {
-  background-color: #1E2F39;
 
+
+}
+
+body {
+  background-color: #1E2F39;
+}
+
+.l-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #EAF3E9;
+  width: 50vw;
+  padding-right: 80px;
+  padding-left: 297px;
+}
+
+.l-card h2 {
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.f-div {
+  display: flex;
+  margin-top: 100px;
+}
+
+.btt {
+  width: 200px;
+  margin-left: 100px;
+  margin-top: 35px;
+  height: 52px;
+  font-size: 25px;
+}
+.r-card{
+  display: flex;
+}
+
+.fcard {
+  background-size: cover;
+  width: 300px;
+  padding: 125px 0;
+  border-radius: 70px;
+}
+
+.scard {
+  width: 300px;
+  background-size: cover;
+  padding: 125px 0;
+  border-radius: 70px;
+  background-position: center;
+}
+
+.sss {
+  margin-bottom: 40px;
+}
+
+.r-cards {
+  margin-left: 37px;
+}
+ .s-div {
+  display: flex;
+  margin-top: 100px;
+ }
+
+.ld-card {
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #EAF3E9;
+    width: 50vw;
+    padding-right: 150px;
+    padding-left: 140px;
+}
+
+
+.ld-card h2 {
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.rd-card {
+  display: flex;
+  width: 50vw;
+  justify-content: end;
+}
+
+.bodyp {
+  padding-bottom: 100px;
 }
