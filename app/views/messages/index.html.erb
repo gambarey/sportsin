@@ -1,0 +1,16 @@
+<div class="containerb titleb">
+  <h1><%= "Inbox" %></h1>
+  <div class="messages">
+    <% Message.all.each do |message| %>
+      <div class="card" id="message-<%= message.id %>">
+        <small>
+          <strong><%= message.user.name %></strong><br>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small><br>
+        <div class="message">
+          <p><%= message.content %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

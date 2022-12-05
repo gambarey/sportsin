@@ -7,7 +7,7 @@ class OffersController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @offer = offer.new(offer_params)
+    @offer = Offer.new(offer_params)
     @offer.user = @user
     @offer.user = current_user
     @offer.status = false
@@ -19,11 +19,31 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.all
+    @offer = Offer.find(params[:id])
   end
 
   def index
-    @offer = Offer.all
+    @offers = Offer.all
+    @current_offer = @offers.second
+
+    if params[:query].present?
+      sql_query = <<~SQL
+        offers.title @@ :query
+        OR offers.description @@ :query
+        OR offers.location @@ :query
+      SQL
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
+
+    @marker =
+      {
+        lat: @current_offer.geocode[0],
+        lng: @current_offer.geocode[1]
+        # info_window: render_to_string(partial: "info_window", locals: {offer: offer})
+      }
+
   end
 
   def destroy
@@ -39,6 +59,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :location, :fee, :description)
+    params.require(:offer).permit(:title, :location, :fee, :description, :user_id)
   end
 end

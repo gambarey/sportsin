@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #042331;
+  background: #2F4858;
+  border-bottom: 1px solid #eaf3e9;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,19 +13,28 @@
 }
 
 .sidebar{
-  position: fixed;
+  min-height: 100vh;
   top: 66px;
   left: 0;
-  width: 220px;
+  width: 250px;
   height: 100%;
-  background: #042331;
- }
+  background: #2F4858;
+  margin-top: 0px;
+  margin-left: -35px;
+}
+
+.punto{
+  list-style-type: none;
+
+}
 
  .sidebar ul li a{
   display: block;
   padding: 23px 10px;
-  border-bottom: 1px solid #03374e;
+  border: 1px solid #22ecae;
   color: #0e94d4;
+  border-color: #22ecae;
+  text-decoration: none;
  }
 
  .sidebar ul li a .icon{
@@ -53,3 +63,26 @@
  .hover_collapse .sidebar ul li a .text{
   display: none;
  }
+
+ .body-content {
+  display: flex;
+  min-height: 100vh;
+ }
+
+ .form-control {
+  display: block;
+  width: 410px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0E0000;
+  background-color: #F4F4F4;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

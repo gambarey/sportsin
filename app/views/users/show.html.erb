@@ -1,2 +1,27 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="card">
+    <div class="card-left">
+      <img src="#" alt="Person" class="card__image">
+      <p class="card__name"><%= @user.name %></p>
+        <div class="sport">
+          <%= @user.sport.name %>
+        </div>
+    </div>
+
+      <div class="grid-container">
+        <h3> Achievements </h3>
+        <% @user.achievements.each do |achievement| %>
+          <div class="card">
+            <div class="card-left">
+              <p class="card__name">
+                <%= achievement&.name %>
+              </p>
+              <div class="sport"><%= achievement.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

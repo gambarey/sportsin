@@ -1,2 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.bodyp{
+  width: 100%;
+}
+.bodyp form{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+form label{
+  color: white;
+}

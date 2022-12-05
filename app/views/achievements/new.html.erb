@@ -1,2 +1,15 @@
-<h1>Achievements#new</h1>
-<p>Find me in app/views/achievements/new.html.erb</p>
+<h1 class="titleb">Add your Achievements</h1>
+
+<%= simple_form_for([@achievement]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true %>
+    <%= f.input :description %>
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+  <div class="form-actions btn btn-primary">
+    <%= f.button :submit, "Create Achievement" %>
+  </div>
+<% end %>
