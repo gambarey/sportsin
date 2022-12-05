@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-left">
-      <%#= cl_image_tag @user&.photo.key, class:"card__image" %>
+      <%= cl_image_tag @user&.photo.key, class:"card__image" %>
       <p class="card__name"><%= @user&.name %>
         <%= @user.last_name %></p>
       <div class="sport">Volleyball Player</p>
