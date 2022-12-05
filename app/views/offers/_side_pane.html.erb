@@ -1,18 +1,18 @@
 
   <div class="grid-container">
-      <div class="description">
+      <div class="description-offer">
         <%= offer.description %>
       </div>
-      <div class="description" data-controller="map" data-map-marker-value="<%= marker.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="description map" data-controller="map" data-map-marker-value="<%= marker.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       <div class="titles" data-controller="apply">
-        <div class="title" data-apply-target="contact">
+        <div class="title-offer-big" data-apply-target="contact">
           <a href="#">
             <span class="icon"><i class="fa fa-id-card"></i></span>
             <span class="text">Contact</span>
           </a>
         </div>
-        <div class="title" data-apply-target="apply_btn" action="click->apply#createApplication">
+        <div class="title-offer-big" data-apply-target="apply_btn" action="click->apply#createApplication">
           <a href="#">
           <span class="icon"><i class="fa fa-id-card"></i></span>
           <span class="text">Apply</span>

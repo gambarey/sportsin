@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   before_action :set_offer, only: %i[show destroy]
   def new
     @offer = Offer.new
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def create
@@ -24,7 +24,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
-    @current_offer = @offers.second
+    @current_offer = @offers.first
 
     if params[:query].present?
       sql_query = <<~SQL
