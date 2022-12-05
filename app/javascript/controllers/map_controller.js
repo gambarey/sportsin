@@ -7,14 +7,16 @@ export default class extends Controller {
   };
 
   connect() {
-    console.log(this.markerValue);
     mapboxgl.accessToken = this.apiKeyValue;
-
+console.log(this.markerValue)
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
+      center: [this.markerValue.lng, this.markerValue.lat],
+      zoom: 12,
     });
     this.#addMarkerToMap();
+
   }
 
   #addMarkerToMap() {
@@ -23,4 +25,6 @@ export default class extends Controller {
       // .setPopup(popup)
       .addTo(this.map);
   }
+
+
 }

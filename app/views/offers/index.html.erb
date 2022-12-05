@@ -4,7 +4,7 @@
 <div class="main-container card d-flex h-100" data-controller="apply" id="list" data-search-offers-target="list">
   <p class="h3">
     <div class="left-container w-50 h-80 p-2">
-      <% @offers.each do |offer| %>
+      <% @offers.each_with_index do |offer, index| %>
         <%# insert offer card  %>
         <div class="container" style="zoom: 45%">
           <div class="card-offer">
@@ -26,7 +26,7 @@
                 <%= offer.location %>
               </div>
               <div class="title-offer-big" >
-                <a href="#" data-action="click->apply#displayInfo">
+                <a href="#" data-action="click->apply#displayInfo" id="<%= index %>" >
                   <span class="icon"><i class="fa fa-id-card"></i></span>
                   <span class="text">More info</span>
                 </a>
@@ -39,17 +39,16 @@
   </div>
   <div class="right-container card-offer w-40 h-100 p-2" style="zoom: 45%">
    <% @offers.each do |offer| %>
-    <div class="right-container card-offer w-40 h-100 p-2 d-none" data-apply-target="side_pane">
-      <%# <%= render "side_pane", offer: @current_offer, marker: @marker %>
+    <div class="right-container card-offer w-40 h-100 p-2 d-none" data-apply-target="sidePane">
         <div class="grid-container">
       <div class="description-offer">
         <%= offer.description %>
       </div>
       <div class="description map" data-controller="map" data-map-marker-value="<%= @marker.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <div class="titles" data-controller="apply">
+      <div class="titles">
         <div class="title-offer-big" data-apply-target="contact">
-          <a href="#">
+          <a href="/clubs/:club_id/messages/new">
             <span class="icon"><i class="fa fa-id-card"></i></span>
             <span class="text">Contact</span>
           </a>

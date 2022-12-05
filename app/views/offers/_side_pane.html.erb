@@ -7,21 +7,22 @@
       </div>
       <div class="titles" data-controller="apply">
         <div class="title-offer-big" data-apply-target="contact">
-          <a href="#">
+          <%# <a href="/messages/new">
             <span class="icon"><i class="fa fa-id-card"></i></span>
             <span class="text">Contact</span>
-          </a>
+          </a> %>
+          <%= link_to "Contact", :method=> "messages#new" %>
         </div>
         <div class="title-offer-big" data-apply-target="apply_btn" action="click->apply#createApplication">
           <a href="#">
           <span class="icon"><i class="fa fa-id-card"></i></span>
           <span class="text">Apply</span>
         </a>
-          <%# <button aria-label="Apply">
-            <i class="title" data-action="click->edit-movie#displayForm"></i>
-          </button> %>
-          <%# <%= render "applications/form", application: @application %>
-          <%# <%= link_to "Apply", :method=> "applications#create" %>
+          # <%# <button aria-label="Apply">
+          #   <i class="title" data-action="click->edit-movie#displayForm"></i>
+          # </button> %>
+          # <%# <%= render "applications/form", application: @application %>
+          # <%# <%= link_to "Apply", :method=> "applications#create" %>
         </div>
       </div>
     </div>
