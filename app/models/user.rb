@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :applications, dependent: :destroy
   has_many :achievements, dependent: :destroy
   has_many :club_histories, dependent: :destroy
-  has_one :clubs, through: :club_histories
-  has_many :owned_clubs, foreign_key: 'user_id', class_name: 'Club', dependent: :destroy
+  has_many :clubs, through: :club_histories
+  has_one :owned_club, foreign_key: 'user_id', class_name: 'Club', dependent: :destroy
   belongs_to :sport
   has_one_attached :photo
 
