@@ -10,21 +10,22 @@ export default class extends Controller {
   }
 displayInfo() {
   // @current_offer = this.
+  this.side_paneTarget.classList.toggle("d-none")
 }
 
-  update(event) {
-    // event.preventDefault()
-    const url = this.more_info_btnTarget.action
-    fetch(url, {
-      method: "GET",
-      headers: { "Accept": "text/plain" },
-      body: new FormData(this.more_info_btnTarget)
-    })
-      .then(response => response.text())
-      .then((data) => {
-        this.side_paneTarget.outerHTML = data
-      })
-  }
+  // update(event) {
+  //   // event.preventDefault()
+  //   const url = this.more_info_btnTarget.action
+  //   fetch(url, {
+  //     method: "GET",
+  //     headers: { "Accept": "text/plain" },
+  //     body: new FormData(this.side_paneTarget)
+  //   })
+  //     .then(response => response.text())
+  //     .then((data) => {
+  //       this.side_paneTarget.outerHTML = data
+  //     })
+  // }
 
   createApplication() {
     const url = this.apply_btnTarget.action
