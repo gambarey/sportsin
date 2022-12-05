@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[show destroy]
-  
+
   def new
     @message = Message.new
     @user = User.find(params[:user_id])

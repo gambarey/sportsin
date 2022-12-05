@@ -4,7 +4,7 @@
       <%= cl_image_tag @user&.photo.key, class:"card__image" %>
       <p class="card__name"><%= @user&.name %>
         <%= @user.last_name %></p>
-      <div class="sport">Volleyball Player</p>
+      <div class="sport"><%= @user.sport.name %></p>
     </div>
   </div>
   <div class="card-right">
@@ -37,7 +37,7 @@
 <div class="icard">
   <h2>Titles</h2>
     <div class="titles">
-      <% @user.achievements.first(6).each do |achievement| %>
+      <% @user.titles.first(6).each do |achievement| %>
         <div class="title">
           <div >
             <i class="fa-solid fa-trophy trophy"></i>
@@ -54,7 +54,7 @@
 <div class="icard">
   <h2>Achievements</h2>
   <div class="titles">
-      <% @user.achievements.first(6).each do |achievement| %>
+      <% @user.honors.first(6).each do |achievement| %>
         <div class="title">
           <div >
             <i class="fa-solid fa-trophy trophy"></i>

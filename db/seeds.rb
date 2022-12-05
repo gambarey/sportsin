@@ -15,6 +15,7 @@ Offer.destroy_all
 Club.destroy_all
 Sport.destroy_all
 
+
 # Sports:
 sport1 = Sport.create(name: 'Football')
 puts "sport1 created!"
@@ -27,25 +28,6 @@ puts "sport4 created!"
 sport5 = Sport.create(name: 'Tennis')
 puts "sport5 created!"
 
-# Clubs
-# club1 = Club.create(name: 'Lugo M.B', sport_id: sport5.id)
-# puts "club1 created!"
-# club2 = Club.create(name: 'Madrid S.C', sport_id: sport3.id)
-# puts "club2 created!"
-# club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
-# puts "club3 created!"
-
-club_photo4 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669900052/development/Sevilla_umux94.png")
-club4 = Club.new(name: 'Sevilla C.D', sport_id: sport2.id)
-club4.photo.attach(io: club_photo4, filename: "umux94.png")
-club4.save
-puts "club4 created!"
-
-club_photo2 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669899891/development/Cuenca_as6rzx.png")
-club5 = Club.create(name: 'Cuenca C.D', sport_id: sport2.id)
-club5.photo.attach(io: club_photo2, filename: "Cuenca.png", content_type: "image/png")
-club5.save
-puts "club5 created!"
 
 # User:
 
@@ -56,9 +38,9 @@ puts "user1 created!"
 user2 = User.create(
   name: 'Maria',
   last_name: 'Smith',
-  position: 'Singles',
-  description: 'Winner of the last regional slam in France',
-  sport_id: sport5.id,
+  position: 'Manager',
+  description: 'Owner of Barcelona',
+  sport_id: sport2.id,
   email: 'maria@sportsin.com',
   password: 123456
 )
@@ -76,6 +58,26 @@ user3 = User.create(
 profile1 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1669976060/development/xhw5kn5dlsqgrz8zhih4ujrc1h2v.jpg")
 user3.photo.attach(io: profile1, filename: "IMG_0861_sweidl.jpg", content_type: "image/jpg")
 puts "user3 created!"
+
+# Clubs
+# club1 = Club.create(name: 'Lugo M.B', sport_id: sport5.id)
+# puts "club1 created!"
+# club2 = Club.create(name: 'Madrid S.C', sport_id: sport3.id)
+# puts "club2 created!"
+# club3 = Club.create(name: 'Barcelona C.D', sport_id: sport1.id)
+# puts "club3 created!"
+
+club_photo4 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669900052/development/Sevilla_umux94.png")
+club4 = Club.new(name: 'Sevilla C.D', sport_id: sport2.id, owner: user3)
+club4.photo.attach(io: club_photo4, filename: "umux94.png")
+club4.save
+puts "club4 created!"
+
+club_photo2 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669899891/development/Cuenca_as6rzx.png")
+club5 = Club.create(name: 'Cuenca C.D', sport_id: sport2.id, owner: user2)
+club5.photo.attach(io: club_photo2, filename: "Cuenca.png", content_type: "image/png")
+club5.save
+puts "club5 created!"
 
 #offer:
 offer1 = Offer.create(
@@ -125,34 +127,34 @@ puts "title created!"
 achievement2 = Achievement.create(
   name: 'Winner of the Volleyball cup in Brazil',
   user_id: user3.id,
-  sort: "Title"
+  sort: "title"
 )
 puts "title2 created!"
 
 achievement3 = Achievement.create(
   name: 'Best defender in 2022',
   user_id: user3.id,
-  sort: "Title"
+  sort: "title"
 )
 puts "title3 created!"
 achievement4 = Achievement.create(
   name: 'Best libero in 2021',
   user_id: user3.id,
-  sort: "Title"
+  sort: "title"
 )
 puts "title4 created!"
 
 achievement5 = Achievement.create(
   name: 'Winner State Tournament in France 2020',
   user_id: user3.id,
-  sort: "Title"
+  sort: "title"
 )
 puts "title5 created!"
 
 achievement6 = Achievement.create(
   name: 'Winner of the Volleyball cup in Peru',
   user_id: user3.id,
-  sort: "Title"
+  sort: "title"
 )
 puts "title6 created!"
 
@@ -161,13 +163,13 @@ puts "title6 created!"
 achievement7 = Achievement.create(
   name: 'Nominated to best defender in 2022',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement1 created!"
 achievement8 = Achievement.create(
   name: 'Nominated toBest libero in 2021',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement2 created!"
 
@@ -175,28 +177,28 @@ puts "achievement2 created!"
 achievement9 = Achievement.create(
   name: 'Nominated to Best defender in 2022',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement3 created!"
 
 achievement10 = Achievement.create(
   name: 'Nominated to Best libero in 2021',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement4 created!"
 
 achievemen11 = Achievement.create(
   name: 'Winner State Tournament in France 2020',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement5 created!"
 
 achievement12 = Achievement.create(
   name: 'Winner of the Volleyball cup in Peru',
   user_id: user3.id,
-  sort: "Achievement"
+  sort: "honor"
 )
 puts "achievement6 created!"
 

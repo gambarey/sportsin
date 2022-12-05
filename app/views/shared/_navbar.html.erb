@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= cl_image_tag "https://res.cloudinary.com/daaaaanx5/image/upload/v1669740090/Logotipo_circular_reciclaje_ecol%C3%B3gico_verde_1_1_id6roo.png" %>
+      <%= image_tag "logo.png" %>
     <% end %>
     <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
