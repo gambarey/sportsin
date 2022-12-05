@@ -1,142 +1,39 @@
 <div class="container">
-  <div class="card">
+  <div class='home-cards__container'>
     <div class="card-left">
       <%= cl_image_tag @user&.photo.key, class:"card__image" %>
-      <p class="card__name"><%= @user&.name %>
-        <%= @user.last_name %></p>
-      <div class="sport"><%= @user.sport.name %></p>
-    </div>
-  </div>
-  <div class="card-right">
-    <div class="grid-container">
-      <div class="description">
-        <strong>Description:</strong> <%= @user.description %> <br>
-        <strong>Age:</strong> 28 <br>
-        <strong>Position:</strong> <%= @user.position %> <br>
-        <strong>Height:</strong> 1,94m <br>
-        <strong>Weight:</strong> 98kg <br>
-        <strong>Country:</strong> Brazil/Portugal<br>
+      <div class='card-left__name'>
+        <p class="card__name"><%= @user.name %> <%= @user.last_name %></p>
+        <p class="sport"><%= @user.sport.name %></p>
       </div>
-    </div>
-    <div class="titles">
-      <% @user.achievements.first(2).each do |achievement| %>
-        <div class="title">
-          <div >
-            <i class="fa-solid fa-trophy trophy"></i>
+      <div class='card-left__sport'>
+      <i class="fal fa-volleyball-ball"></i>
+        <p>volleyball Player</p>
+        <p>Position: Libero</p>
+        <div class='card-left__sport-info'>
+          <div class='card-left__sport-info-weight'>
+            <p>98KG</p>
+            <p>Weight</p>
           </div>
-          <div class="Adescrip">
-            <%= achievement.name %> <br>
-            <%= achievement.description %>
+          <div class='card-left__sport-info-height'>
+            <p>1.94m</p>
+            <p>Height</p>
           </div>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <h3>BEST PLAYER WORDL CUP 2023</h3>
+        <p>1st place for best player for the national team...</p>
+      </div>
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <h3>BEST PLAYER WORDL CUP 2023</h3>
+        <p>1st place for best player for the national team...</p>
+      </div>
+      <div class="carousel">   <div class="carousel-inner">   <div class="item active">   <img src="img_1.jpg" alt="Image 1" >   </div>   <div class="item">   <img src="img_2.jpg" alt="Image 2" >   </div>   <div class="item">   <img src="img_3.jpg" alt="Image 3" >   </div>   <div class="item">   <img src="img_4.jpg" alt="Image 4" >   </div>   </div> </div>  <style>   .carousel {   width: 600px;   margin: 10px auto;   }   .carousel-inner {   width: 100%;   overflow: hidden;   }   .carousel-inner .item {   width: 20%;   float: left;   }   .carousel-inner .item img {   display: block;   width: 100%;   max-width: 100%;   } </style>
     </div>
   </div>
-</div>
-
-<div class="icard">
-  <h2>Titles</h2>
-    <div class="titles">
-      <% @user.titles.first(6).each do |achievement| %>
-        <div class="title">
-          <div >
-            <i class="fa-solid fa-trophy trophy"></i>
-          </div>
-          <div class="Adescrip">
-            <%= achievement.name %> <br>
-            <%= achievement.description %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-</div>
-
-<div class="icard">
-  <h2>Achievements</h2>
-  <div class="titles">
-      <% @user.honors.first(6).each do |achievement| %>
-        <div class="title">
-          <div >
-            <i class="fa-solid fa-trophy trophy"></i>
-          </div>
-          <div class="Adescrip">
-            <%= achievement.name %> <br>
-            <%= achievement.description %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-</div>
-<div class="icard videos">
-  <h2>Videos</h2>
-  <div>
-    <iframe class="video" src="https://www.youtube.com/embed/j3D5h94YEoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
-    <iframe class="video" src="https://www.youtube.com/embed/AYFlH11wUDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay preload="auto"></iframe>
-  </div>
-</div>
-<div class="icard">
-  <h2>Clubs History</h2>
-  <div class="ctitles">
-    <div class="ctitle">
-      <div >
-         <%= image_tag "barca.png", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Barcelona<br>
-        Season 21/22
-      </div>
-    </div>
-    <div class="ctitle">
-      <div >
-         <%= image_tag "benfica.png", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Benfica <br>
-        Season 20/21
-      </div>
-    </div>
-    <div class="ctitle">
-      <div >
-         <%= image_tag "sporting.png", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Sporting<br>
-        Season 19/20
-      </div>
-    </div>
-    <div class="ctitle">
-      <div >
-         <%= image_tag "perugia.png", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Lube Civitanova<br>
-        Season 18/19
-      </div>
-    </div>
-    <div class="ctitle">
-      <div >
-         <%= image_tag "real.png", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Real Madrid<br>
-        Season 17/18
-      </div>
-    </div>
-    <div class="ctitle">
-      <div >
-         <%= image_tag "minas.svg", class:"club" %>
-      </div>
-      <div class="Adescrip">
-        Minas<br>
-        Season 16/17
-      </div>
-    </div>
-  </div>
-</div>
-<div class="icard">
-  <h2>Games Stats</h2>
-  <div>
-  <%= image_tag "stats.jpg", class:"stats" %>
-  </div>
-</div>
 </div>
