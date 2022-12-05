@@ -49,15 +49,15 @@
   //height: 21vh;
   width: 160px;
   border-radius: 5px;
-  border: 5px solid #eaf3e9;
+  border: 2px solid #eaf3e9;
   margin-left: 0px;
-  box-shadow: 0 10px 50px #22ecae;
 }
 
 .sport {
   font-size: 1.3em;
   width: 230px;
-  font-style: italic;
+  //font-style: italic;
+  color: #22ecae;
 }
 
 .description {
@@ -168,6 +168,14 @@
   object-fit: contain;
 }
 
+
+h1 {
+  font-size: 2.5rem;
+  padding-top: 30px;
+  color: white;
+  font-family: nunito;
+  }
+
 .card-offer {
   background-color: #2F4858;
   border-radius: 5px;
@@ -216,3 +224,4 @@
   margin: 5px;
   margin: 0px 27px;
 }
+
