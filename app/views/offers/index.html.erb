@@ -37,41 +37,21 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container card-offer w-40 h-100 p-2" style="zoom: 45%">
+  <div class="right-container card-offer-right w-40 p-2" style="zoom: 45%">
     <% @offers.each do |offer| %>
       <div class="right-container card-offer pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
         <div class="grid-container">
           <div class="description-offer">
             <%= offer.description %>
           </div>
-          <%# <%= marker =
-      {
-        lat: offer.geocode[0],
-        lng: offer.geocode[1]
-        # info_window: render_to_string(partial: "info_window", locals: {offer: offer})
-      }
- %>
           <div class="description map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
           <div class="titles-offer">
             <div class="title-offer-big" data-apply-target="contact">
-              <%# <a href="/messages/new">
-            <span class="icon"><i class="fa fa-id-card"></i></span>
-            <span class="text">Contact</span>
-          </a> %>
               <%= link_to "Contact", new_club_message_path(offer.club)%>
             </div>
             <div class="title-offer-big" data-apply-target="applyBtn" action="click->apply#createApplication">
               <%= link_to "Apply", new_offer_application_path(offer) %>
-              <%# <a href="">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span class="text">Apply</span>
-              </a> %>
-              <%# <button aria-label="Apply">
-            <i class="title" data-action="click->edit-movie#displayForm"></i>
-          </button> %>
-              <%# <%= render "applications/form", application: @application %>
-              <%# <%= link_to "Apply", :method=> "applications#create" %>
             </div>
           </div>
         </div>
