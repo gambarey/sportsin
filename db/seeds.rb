@@ -55,7 +55,7 @@ user3 = User.create(
   email: 'felipe@sportsin.com',
   password: 123456
 )
-profile1 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1669976060/development/xhw5kn5dlsqgrz8zhih4ujrc1h2v.jpg")
+profile1 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670247074/development/FelipeSquare_mejord.png")
 user3.photo.attach(io: profile1, filename: "IMG_0861_sweidl.jpg", content_type: "image/jpg")
 puts "user3 created!"
 

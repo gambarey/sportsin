@@ -1,0 +1,191 @@
+.bannerh {
+  background-size: cover;
+  background-position: top;
+  padding: 150px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.bannerh h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 135px;
+  font-weight: bold;
+}
+
+.bannerh p {
+  font-size: 30px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btnh {
+  background: #22ECAE;
+  border: 1px solid #1E2F39;
+  border-radius: 25px;
+  width: 172px;
+  font-size: 25px;
+  height: 70px;
+  align-items: center;
+  justify-items: center;
+  padding-top: 15px;
+}
+
+.btnh:hover {
+background: #EAF3E9;
+border: 1px solid #22ECAE;
+border-radius: 25px;
+color: #22ECAE;
+}
+
+.containerbh {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerh {
+
+
+}
+
+body {
+  background-color: #1E2F39;
+}
+
+.l-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #EAF3E9;
+  width: 50vw;
+  padding-right: 80px;
+  padding-left: 297px;
+}
+
+.l-card h2 {
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.f-div {
+  display: flex;
+  margin-top: 100px;
+}
+
+.btt {
+  width: 200px;
+  margin-left: 100px;
+  margin-top: 35px;
+  height: 70px;
+  font-size: 25px;
+}
+.r-card{
+  display: flex;
+}
+
+.fcard {
+  background-size: cover;
+  width: 300px;
+  padding: 125px 0;
+  border-radius: 70px;
+}
+
+.scard {
+  width: 300px;
+  background-size: cover;
+  padding: 125px 0;
+  border-radius: 70px;
+  background-position: center;
+}
+
+.sss {
+  margin-bottom: 40px;
+}
+
+.r-cards {
+  margin-left: 37px;
+}
+ .s-div {
+  display: flex;
+  margin-top: 100px;
+ }
+
+.ld-card {
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #EAF3E9;
+    width: 50vw;
+    padding-right: 150px;
+    padding-left: 140px;
+}
+
+
+.ld-card h2 {
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.rd-card {
+  display: flex;
+  width: 50vw;
+  justify-content: end;
+}
+
+.bodyp {
+  padding-bottom: 100px;
+}
+
+.arrows {
+  position: absolute;
+  width: 60px;
+  height: 72px;
+  bottom: 60px;
+}
+
+.arrows path {
+  stroke: #EAF3E9;
+  fill: transparent;
+  stroke-width: 3px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay:0s;
+  -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}

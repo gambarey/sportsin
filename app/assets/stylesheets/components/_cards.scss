@@ -1,28 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
-  font-family: 'Baloo Paaji 2', cursive;
-  background-color: #2f4858;
-  margin: 50px;
-  border-radius: 5px;
-  width: 72vw;
-  flex-direction: column;
+p, h1, h2 {
+  color: #eaf3e9;
+  font-family: Montserrat, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .card-left {
-  margin: 30px;
-  display: grid;
+  border-radius: 5px;
+  background-color: #1E2F39;
+  width: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.card-left__name{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.card-left__sport{
+  width: 100%;
+  text-align: center;
+  padding: 25px 0px
+}
+.fa-volleyball{
+  color: #22ecae;
+}
+.card-left__sport-info{
+  display: flex;
+  justify-content: center;
+}
+.card-left__sport-info-weight{
+  padding: 0px 10px;
+  border-right: 1px solid white;
+}
+.card-left__sport-info-height{
+  padding: 0px 10px;
+}
 .grid-container {
   flex-grow: 1;
   margin: 30px;
 }
-
 .card {
   background-color: #2F4858;
   border-radius: 5px;
@@ -36,26 +56,20 @@
   border: 1px solid #eaf3e9;
   justify-content: space-between;
 }
-
 .card__name {
   margin-top: 17px;
   font-size: 2em;
-  width: 230px;
   line-height: 28px;
   margin-bottom: 2px;
 }
 
 .card__image {
-  //height: 21vh;
-  width: 160px;
+  width: 200px;
   border-radius: 5px;
-  border: 2px solid #eaf3e9;
   margin-left: 0px;
 }
-
 .sport {
   font-size: 1.3em;
-  width: 230px;
   //font-style: italic;
   color: #22ecae;
 }
@@ -153,7 +167,10 @@
 }
 
 .card-right {
-  margin-right: 50px;
+  background-color: #1E2F39;
+  border-radius: 5px;
+  padding: 20px;
+  width: 70%;
 }
 
 .stats {
@@ -236,10 +253,30 @@ h1 {
   padding: 20px;
 }
 
+
 .title-offer-big .text {
   text-decoration: none;
 }
 
 .main-container-offer {
   margin: 0 auto;
+}
+
+.card-achievement-user{
+  border: 2px solid #22ecae;
+  padding: 20px 10px;
+  background-color: rgba(34, 236, 174, 0.07);
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.card-right {
+  background-color: #1E2F39;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.home-cards__container{
+  display: flex;
+  justify-content: space-between;
 }

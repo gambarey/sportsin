@@ -1,0 +1,42 @@
+<div class="container">
+  <div class='home-cards__container'>
+    <div class="card-left">
+      <%= cl_image_tag @user&.photo.key, class:"card__image" %>
+      <div class='card-left__name'>
+        <p class="card__name"><%= @user.name %> <%= @user.last_name %></p>
+        <p class="sport"><%= @user.sport.name %></p>
+      </div>
+      <div class='card-left__sport'>
+        <i class="fal fa-volleyball-ball"></i>
+        <p>volleyball Player</p>
+        <p>Position: Libero</p>
+        <div class='card-left__sport-info'>
+          <div class='card-left__sport-info-weight'>
+            <p>98KG</p>
+            <p>Weight</p>
+          </div>
+          <div class='card-left__sport-info-height'>
+            <p>1.94m</p>
+            <p>Height</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <h3>WINNER BEST PLAYER WORLD CUP 2023</h3>
+        <p>1st place for best player for the national team...</p>
+      </div>
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <h3>BEST PLAYER WORLD CUP 2023NOMINEE</h3>
+        <p>These are the players for the national team...</p>
+      </div>
+        <div class="images-users">
+          <img src="https://res.cloudinary.com/daaaaanx5/image/upload/c_fill,g_auto,h_250,w_970/b_rgb:000000,e_gradient_fade,y_-0.50/c_scale,co_rgb:ffffff,fl_relative,l_text:montserrat_25_style_light_align_center:Shop%20Now,w_0.5,y_0.18/v1670315730/development/IMG_0865_qpwaky.jpg" class="d-block w-50" alt="...">
+          <img src="https://res.cloudinary.com/daaaaanx5/image/upload/c_fill,g_auto,h_250,w_970/b_rgb:000000,e_gradient_fade,y_-0.50/c_scale,co_rgb:ffffff,fl_relative,l_text:montserrat_25_style_light_align_center:Shop%20Now,w_0.5,y_0.18/v1670315730/development/IMG_0865_qpwaky.jpg" class="d-block w-50" alt="...">
+        </div>
+    </div>
+  </div>
+</div>
