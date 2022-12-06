@@ -24,12 +24,11 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.club = @club
     @message.user = current_user
-    @message.content =
-    if @message.save
-      redirect_to club_messages_path, notice: 'Message sent'
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @message.content = if @message.save
+        redirect_to club_messages_path(@club), notice: "Message sent"
+      else
+        render :new, status: :unprocessable_entity
+      end
   end
 
   def show
