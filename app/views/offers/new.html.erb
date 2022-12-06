@@ -1,2 +1,17 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<h1 class="titleb">Create a new Offer</h1>
+
+<%= simple_form_for([@offer]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true %>
+    <%= f.input :description,
+                required: true %>
+    <%= f.input :fee %>
+    <%= f.input :location %>
+  <div class="form-actions btn btnh btt">
+    <%= f.button :submit, "Create Offer" %>
+  </div>
+<% end %>
