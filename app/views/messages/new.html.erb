@@ -4,7 +4,7 @@
       <div class="p-3 text-center">
         <h3>New message</h3>
 
-        <%= simple_form_for [current_user, @club, @message] do |f| %>
+        <%= simple_form_for [@club, @message] do |f| %>
           <% if @message.errors.any? %>
             <div class="alert alert-danger">
               <h5>You must correct these errors</h5>

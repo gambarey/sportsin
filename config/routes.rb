@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :clubs
+  resources :clubs do
+    resources :messages, only: %i[new create index]
+  end
   resources :users, only: %i[show] do
     resources :messages, only: %i[new create index]
   end
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
     resources :applications, only: %i[new index create]
   end
   resources :applications, only: %i[index edit update]
+  resources :messages, only: %i[new create index]
 end
