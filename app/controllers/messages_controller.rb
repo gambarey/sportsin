@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
     @message.content =
     if @message.save
-      redirect_to messages_path, notice: 'Message sent'
+      redirect_to club_messages_path, notice: 'Message sent'
     else
       render :new, status: :unprocessable_entity
     end
