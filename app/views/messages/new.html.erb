@@ -1,7 +1,7 @@
 
 <div class="container py-5" style="
     display: flow-root;">
-      <div class="p-3 text-center">
+      <div class="p-3">
         <h3>New message</h3>
 
         <%= simple_form_for [@club, @message] do |f| %>
@@ -17,7 +17,7 @@
           <% end %>
           <%= f.input :content,
                 required: true %>
-          <%= f.submit class: 'btn btn-primary' %> or
+          <%= f.submit class: 'btn btn-primary' %><span class="text__white> or </span>
           <%= link_to 'Cancel', offers_path, class: 'text-danger' %>
         <% end %>
       </div>
