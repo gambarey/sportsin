@@ -526,6 +526,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -691,6 +696,18 @@ source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+stimulus-content-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/stimulus-content-loader/-/stimulus-content-loader-4.0.1.tgz#8e57d519a28c9d74e082633037c0de67fc8640db"
+  integrity sha512-XztvmKLLbOQCgQLXuOagnU3/EA559xpXr2moUWwi2XP5LfDpM6EOFput5w4QVc07TLYCGrKsKe34fgwWSSEKqA==
+
+stimulus-scroll-progress@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-scroll-progress/-/stimulus-scroll-progress-4.0.0.tgz#108b89169f3f24f19637a9733ab096e265e352e0"
+  integrity sha512-GRlPCYaHFVK0KQ5UYpxB18Dh/iQhiyDbZ5mLGNZobPNiXTtPucH4JVLu31LBqZ0aa3rwBDzDCqFmDhYZBf/Zaw==
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 supports-color@^8.0.0:
   version "8.1.1"

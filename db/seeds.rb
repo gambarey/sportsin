@@ -115,6 +115,15 @@ offer4 = Offer.create(
 )
 puts "offer4 created!"
 
+offer5 = Offer.create(
+  title: 'Looking for a Setter at Berlin B.R.',
+  location: 'Berlin',
+  description: 'Our team needs a Setter position player for our team in Berlin',
+  fee: 10000,
+  club_id: club5.id
+)
+puts "offer5 created!"
+
 # achievements TITLES:
 
 achievement1 = Achievement.create(

@@ -15,3 +15,9 @@ application.register("map", MapController)
 
 import SearchOffersController from "./search_offers_controller"
 application.register("search-offers", SearchOffersController)
+
+import { Application } from '@hotwired/stimulus'
+import ScrollProgress from 'stimulus-scroll-progress'
+
+const application = Application.start()
+application.register('scroll-progress', ScrollProgress)
