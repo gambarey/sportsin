@@ -268,8 +268,8 @@ h1 {
   background-color: rgba(34, 236, 174, 0.07);
   margin-bottom: 20px;
   border-radius: 5px;
+  display: flex;
 }
-
 .card-right {
   background-color: #1E2F39;
   border-radius: 5px;
@@ -279,4 +279,11 @@ h1 {
 .home-cards__container{
   display: flex;
   justify-content: space-between;
+}
+.images-users {
+  display: flex;
+}
+.images-users img{
+  border-radius: 5px;
+  margin: 5px;
 }
