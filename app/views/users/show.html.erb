@@ -1,0 +1,47 @@
+<div class="container">
+  <div class='home-cards__container'>
+    <div class="card-left">
+      <%= cl_image_tag @user&.photo.key, class:"card__image" %>
+      <div class='card-left__name'>
+        <p class="card__name"><%= @user.name %> <%= @user.last_name %></p>
+        <p class="sport"><%= @user.sport.name %></p>
+      </div>
+      <div class='card-left__sport'>
+        <span><i class="fal fa-volleyball-ball"></i></span>
+
+        <p>volleyball Player</p>
+        <p>Position: Libero</p>
+        <div class='card-left__sport-info'>
+          <div class='card-left__sport-info-weight'>
+            <p>98KG</p>
+            <p>Weight</p>
+          </div>
+          <div class='card-left__sport-info-height'>
+            <p>1.94m</p>
+            <p>Height</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <div class="card-achievement-user-text">
+          <h3>WINNER BEST PLAYER WORLD CUP 2023</h3>
+          <p>1st place for best player for the national team...</p>
+        </div>
+      </div>
+      <div class="card-achievement-user">
+        <i class="fal fa-trophy"></i>
+        <div class="card-achievement-user-text">
+          <h3>WINNER BEST PLAYER WORLD CUP 2023</h3>
+          <p>1st place for best player for the national team...</p>
+        </div>
+      </div>
+        <div class="images-users">
+          <img src="https://res.cloudinary.com/daaaaanx5/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1670314202/development/icl7gor7x51ewc4i9or6uj6w2frr.png" class="d-block w-50" alt="...">
+          <img src="https://res.cloudinary.com/daaaaanx5/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1670315729/development/2019061111550383288_mrrbzn.jpg" class="d-block w-50" alt="...">
+        </div>
+    </div>
+  </div>
+</div>
