@@ -1,11 +1,20 @@
 <div class="container">
   <% @achievements.each do |achievement| %>
     <div class="card">
-      <div class="card-left">
+      <div class="card-achievement">
+      <% if achievement.sort == "title"%>
+        <i class="fa fa-trophy"></i>
         <p class="card__name">
-          <%= achievement&.name %>
+          <%= achievement.name %>
         </p>
         <div class="sport"><%= achievement.description %></div>
+        <% else %>
+        <img src="https://res.cloudinary.com/daaaaanx5/image/upload/v1670325209/development/trophy4_jfivy9.png" alt="title">
+        <p class="card__name">
+          <%= achievement.name %>
+        </p>
+        <div class="sport"><%= achievement.description %></div>
+      <% end %>
       </div>
     </div>
   <% end %>
