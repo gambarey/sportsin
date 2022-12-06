@@ -52,7 +52,7 @@ user4 = User.create(
   position: 'Manager',
   description: 'Owner of Lisboa',
   sport_id: sport2.id,
-  email: 'Joao@sportsin.com',
+  email: 'joao@sportsin.com',
   password: 123456
 )
 puts "user4 created!"
