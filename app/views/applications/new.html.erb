@@ -1,8 +1,7 @@
-<h1>Applications#new</h1>
-<p>Find me in app/views/applications/new.html.erb</p>
+
 <div class="container py-5" style="
     display: flow-root;">
-      <div class="bg-white rounded p-3 shadow">
+      <div class="p-3 text-center">
         <h3>Apply for this position</h3>
 
         <%= simple_form_for [@offer, @application] do |f| %>
@@ -16,7 +15,7 @@
               </ul>
             </div>
           <% end %>
-          Cover letter <%= f.input :date %>
+          <%# Cover letter %>
           <%= f.submit class: 'btn btn-primary' %> or
           <%= link_to 'Cancel', offers_path, class: 'text-danger' %>
         <% end %>

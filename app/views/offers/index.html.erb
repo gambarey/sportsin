@@ -59,13 +59,14 @@
             <span class="icon"><i class="fa fa-id-card"></i></span>
             <span class="text">Contact</span>
           </a> %>
-              <%= link_to "Contact", new_message_path(offer.club)%>
+              <%= link_to "Contact", new_message_path(offer.club_id)%>
             </div>
-            <div class="title-offer-big" data-apply-target="apply_btn" action="click->apply#createApplication">
-              <a href="#">
+            <div class="title-offer-big" data-apply-target="applyBtn" action="click->apply#createApplication">
+              <%= link_to "Apply", new_offer_application_path(offer) %>
+              <%# <a href="">
                 <span class="icon"><i class="fa fa-id-card"></i></span>
                 <span class="text">Apply</span>
-              </a>
+              </a> %>
               <%# <button aria-label="Apply">
             <i class="title" data-action="click->edit-movie#displayForm"></i>
           </button> %>

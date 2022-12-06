@@ -32,11 +32,11 @@ displayInfo(event) {
   // }
 
   createApplication() {
-    const url = this.apply_btnTarget.action
+    const url = this.applyBtnTarget.action
     fetch(url, {
       method: "POST",
       headers: { "Accept": "text/plain" },
-      body: new FormData(this.apply_btnTarget)
+      body: new FormData(this.applyBtnTarget)
     })
   }
 

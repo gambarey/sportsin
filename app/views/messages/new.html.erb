@@ -1,16 +1,24 @@
-<h1 class="titleb">new message</h1>
 
-<%= simple_form_for([@message]) do |f| %>
-  <%= f.error_notification %>
+<div class="container py-5" style="
+    display: flow-root;">
+      <div class="p-3 text-center">
+        <h3>New message</h3>
 
-  <div class="form-inputs">
-    <%= f.input :content,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "message" }%>
-
-
-  <div class="form-actions btn btn-primary">
-    <%= f.button :submit, "Send" %>
-  </div>
-<% end %>
+        <%= simple_form_for [@club, @message] do |f| %>
+          <% if @message.errors.any? %>
+            <div class="alert alert-danger">
+              <h5>You must correct these errors</h5>
+              <ul>
+                <% @message.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.input :content,
+                required: true %>
+          <%= f.submit class: 'btn btn-primary' %> or
+          <%= link_to 'Cancel', messages_path, class: 'text-danger' %>
+        <% end %>
+      </div>
+</div>
