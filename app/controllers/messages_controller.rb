@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.club = Club.find(22)
+    @message.club = @club
     @message.user = current_user
     @message.content =
     if @message.save
@@ -48,7 +48,7 @@ class MessagesController < ApplicationController
   private
 
   def set_club
-    # @club = Club.find(params[:club_id])
+    @club = Club.find(params[:club_id])
   end
 
   def message_params

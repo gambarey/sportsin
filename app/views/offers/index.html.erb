@@ -59,7 +59,7 @@
             <span class="icon"><i class="fa fa-id-card"></i></span>
             <span class="text">Contact</span>
           </a> %>
-              <%= link_to "Contact", new_message_path(offer.club_id)%>
+              <%= link_to "Contact", new_club_message_path(offer.club)%>
             </div>
             <div class="title-offer-big" data-apply-target="applyBtn" action="click->apply#createApplication">
               <%= link_to "Apply", new_offer_application_path(offer) %>
