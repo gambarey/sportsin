@@ -4,7 +4,7 @@
     <% Message.all.each do |message| %>
       <div class="card" id="message-<%= message.id %>">
         <small>
-          <strong><%= message.user.name %></strong><br>
+          <strong><%= message.user.name %></strong> <strong><%= message.user.last_name %></strong><br>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small><br>
         <div class="message">
