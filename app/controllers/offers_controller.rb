@@ -6,11 +6,12 @@ class OffersController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @offer = Offer.new(offer_params)
-    @offer.user = @user
-    @offer.user = current_user
-    @offer.status = false
+    # @offer.user = @user
+    # @offer.user = current_user
+    # @offer.status = false
+     @offer.club = current_user.owned_club
     if @offer.save
       redirect_to offers_path, notice: 'offer was successfully created'
     else
@@ -59,6 +60,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:title, :location, :fee, :description, :user_id)
+    params.require(:offer).permit(:title, :location, :fee, :description, :club_id)
   end
 end
