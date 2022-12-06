@@ -2,11 +2,12 @@
   <h1><%= "Inbox" %></h1>
   <div class="messages">
     <% Message.all.each do |message| %>
-      <div class="card" id="message-<%= message.id %>">
+      <div class="card message" id="message-<%= message.id %>">
         <small>
-          <strong><%= message.user.name %></strong> <strong><%= message.user.last_name %></strong><br>
+          <strong>From: <%= message.user.name %></strong> <strong><%= message.user.last_name %></strong><br>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small><br>
+        <strong>To: <%= message.club.name %></strong><br>
         <div class="message">
           <p><%= message.content %></p>
         </div>
