@@ -46,6 +46,17 @@ user2 = User.create(
 )
 puts "user2 created!"
 
+user4 = User.create(
+  name: 'Joao',
+  last_name: 'Smith',
+  position: 'Manager',
+  description: 'Owner of Lisboa',
+  sport_id: sport2.id,
+  email: 'Joao@sportsin.com',
+  password: 123456
+)
+puts "user4 created!"
+
 user3 = User.create(
   name: 'Felipe',
   last_name: 'Hernandez',
@@ -73,6 +84,18 @@ club4.photo.attach(io: club_photo4, filename: "umux94.png")
 club4.save
 puts "club4 created!"
 
+club_photo6 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670337401/development/DALL_E_2022-12-06_15.08.40_ke5mrb.png")
+club6 = Club.new(name: 'Paris V. C.', sport_id: sport2.id, owner: user1)
+club6.photo.attach(io: club_photo6, filename: "ke5mrb.png.png")
+club6.save
+puts "club6 created!"
+
+club_photo7 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670337401/development/DALL_E_2022-12-06_15.07.00_-_logo_volleyball_clubs_uzweml.png")
+club7 = Club.new(name: 'Lisbon Volley', sport_id: sport2.id, owner: user4)
+club7.photo.attach(io: club_photo7, filename: "uzweml.png")
+club7.save
+puts "club7 created!"
+
 club_photo2 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1669899891/development/Cuenca_as6rzx.png")
 club5 = Club.create(name: 'Cuenca C.D', sport_id: sport2.id, owner: user2)
 club5.photo.attach(io: club_photo2, filename: "Cuenca.png", content_type: "image/png")
@@ -87,15 +110,52 @@ offer1 = Offer.create(
   fee: 3000,
   club_id: club4.id
 )
-puts "offer1 created!"
+  puts "offer1 created!"
+
+offer6 = Offer.create(
+  title: 'Needed Setter in Paris V. C.',
+  location: 'Paris',
+  description: 'We need a Setter for our volleyball team. Urgent!',
+  fee: 9000,
+  club_id: club6.id
+)
+puts "offer6 created!"
+
+offer7 = Offer.create(
+  title: 'Needed Outside Hitter in Paris V. C.',
+  location: 'Paris',
+  description: 'We need a Outside Hitter for our volleyball team. Urgent!',
+  fee: 10000,
+  club_id: club6.id
+)
+puts "offer7 created!"
+
 offer2 = Offer.create(
   title: 'Needed setter player for Sevilla C.D',
   location: 'Sevilla',
-  description: 'Our team needs a sette position player for our team in Seville',
+  description: 'Our team needs a setter position player for our team in Seville',
   fee: 1000,
   club_id: club4.id
 )
 puts "offer2 created!"
+
+offer8 = Offer.create(
+  title: 'Needed setter player for Lisbon Volley',
+  location: 'Lisbon',
+  description: 'Our team needs a setter position player for our team in Lisbon',
+  fee: 10000,
+  club_id: club7.id
+)
+puts "offer8 created!"
+
+offer9 = Offer.create(
+  title: 'Needed Oposite player for Lisbon Volley',
+  location: 'Lisbon',
+  description: 'Our team needs a oposite position player for our team in Lisbon',
+  fee: 12000,
+  club_id: club7.id
+)
+puts "offer9 created!"
 
 offer3 = Offer.create(
   title: 'Cuenca C.D needs a libero',
