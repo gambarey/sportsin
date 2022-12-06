@@ -1,23 +1,22 @@
 <div class="container">
-  <% @achievements.each do |achievement| %>
-    <div class="card">
+  <div class="card-titles">
+    <% @achievements.each do |achievement| %>
       <div class="card-achievement">
-      <% if achievement.sort == "title"%>
-        <i class="fa fa-trophy"></i>
-        <p class="card__name">
-          <%= achievement.name %>
-        </p>
-        <div class="sport"><%= achievement.description %></div>
-        <% else %>
-        <img src="https://res.cloudinary.com/daaaaanx5/image/upload/v1670325209/development/trophy4_jfivy9.png" alt="title">
-        <p class="card__name">
-          <%= achievement.name %>
-        </p>
-        <div class="sport"><%= achievement.description %></div>
-      <% end %>
+        <% if achievement.sort == "title"%>
+          <i class="fa fa-trophy icon-achievemnt-trophy icon-red"></i>
+          <p class="card__name-titles">
+            <%= achievement.name %>
+          </p>
+          <div class="sport"><%= achievement.description %></div>
+          <% else %>
+          <i class="fa fa-medal icon-achievemnt-trophy icon-red"></i>
+          <p class="card__name-titles">
+            <%= achievement.name %>
+          </p>
+          <div class="sport"><%= achievement.description %></div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
-
+      <% end %>
+  </div>
   <%= link_to "Add new Achivement", new_achievement_path %>
 </div>
