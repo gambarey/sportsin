@@ -296,3 +296,17 @@ h1 {
 .card-achievement-user-text{
   margin-left: 10px;
 }
+//Cards Titles:
+.card-titles{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.card-achievement {
+  text-align: center;
+  padding: 20px;
+}
+.card__name-titles {
+  font-size: 1em;
+  padding-top: 20px;
+}
