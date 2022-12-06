@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :messages
-  resources :clubs
+
+  resources :clubs do
+    resources :messages, only: %i[new create index]
+  end
   resources :users, only: %i[show]
   resources :club_histories, only: %i[new create]
   resources :achievements, only: %i[new create index]

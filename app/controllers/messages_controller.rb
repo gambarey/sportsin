@@ -3,18 +3,30 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @user = current_user
+    # @user = current_user
     # @club = Club.find(params[:id])
   end
 
-  def create
-    # @user = current_user
-    @message = Message.new(message_params)
-    # @message.user = @user
-    @message.user = current_user
+  # def create
+  #   @user = current_user
+  #   @message = Message.new(message_params)
+  #   @message.user = @user
+  #   # @message.club = @club
 
+  #   if @message.save
+  #     redirect_to messages_path, notice: "message was successfully sent"
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
+
+  def create
+    @message = Message.new(message_params)
+    @message.club = @club
+    @message.user = current_user
+    @message.content =
     if @message.save
-      redirect_to messages_path, notice: "message was successfully sent"
+      redirect_to club_messages_path, notice: 'Message sent'
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,11 +47,11 @@ class MessagesController < ApplicationController
 
   private
 
-  def set_message
-    @message = Message.find(params[:id])
+  def set_club
+    @club = Club.find(params[:club_id])
   end
 
   def message_params
-    params.require(:message).permit(:club_id, :content, :user_id)
+    params.require(:message).permit(:content)
   end
 end
