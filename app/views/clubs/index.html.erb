@@ -1,8 +1,11 @@
 <% if current_user.owned_club.present? %>
-  <div class="container">
-    <h2>My Owned Club</h2>
-    <div class="card">
-      <div class="card-left">
+  <div class="containerc">
+    <div class="titleb titlebb">
+      <h2>My Owned Club</h2>
+    </div>
+    <div class="cardc">
+      <div class="card-left card-border">
+        <%= cl_image_tag current_user.owned_club.photo.key, class:"card__image img_club", alt:"club"%>
         <p class="card__name">
           <%= current_user.owned_club.name %>
           <%= current_user.owned_club.website %>
@@ -10,15 +13,24 @@
         <div class="sport"><%= current_user.owned_club.sport.name %></div>
       </div>
     </div>
-    <%= link_to "Register your club", new_club_path %>
-    <%= link_to "Create a new offer for you club", new_offer_path %>
+    <div class="links">
+      <div class="link">
+        <%= link_to "Create a new offer", new_offer_path %>
+      </div>
+      <div class="link">
+        <%= link_to "Register your club", new_club_path %>
+      </div>
+    </div>
   </div>
 <% end %>
-<div class="container">
+<div class="titleb titlebb">
   <h2>My Clubs History</h2>
+</div>
+<div class="containercc">
   <% @clubs.each do |club| %>
-    <div class="card">
-      <div class="card-left">
+    <div class="cardc">
+      <div class="card-left card-border">
+        <%= cl_image_tag club.photo.key, class:"card__image img_club", alt:"club"%>
         <p class="card__name">
           <%= club&.name %>
           <%= club.website %>
@@ -27,5 +39,9 @@
       </div>
     </div>
   <% end %>
-  <%= link_to "Add your Club History", new_club_history_path %>
+</div>
+<div class="links">
+  <div class="link">
+    <%= link_to "Add your Club History", new_club_history_path %>
+  </div>
 </div>
