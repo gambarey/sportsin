@@ -13,18 +13,18 @@ console.log(this.markerValue)
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
       center: [this.markerValue.lng, this.markerValue.lat],
-      zoom: 8,
+      zoom: 12,
     });
-    this.#addMarkerToMap();
+    // this.#addMarkerToMap();
     // this.#fitMapToMarkers();
   }
 
-  #addMarkerToMap() {
-    new mapboxgl.Marker()
-      .setLngLat([this.markerValue.lng, this.markerValue.lat])
-      // .setPopup(popup)
-      .addTo(this.map);
-  }
+  // #addMarkerToMap() {
+  //   new mapboxgl.Marker()
+  //     .setLngLat([this.markerValue.lng, this.markerValue.lat])
+  //     // .setPopup(popup)
+  //     .addTo(this.map);
+  // }
 
   // #fitMapToMarkers() {
   //   const bounds = new mapboxgl.LngLatBounds()
@@ -32,9 +32,9 @@ console.log(this.markerValue)
   //   this.map.fitBounds(bounds, { padding: 10, maxZoom: 25, duration: 0 })
   // }
 
-  onMapLoaded(event) {
+  // onMapLoaded(event) {
 
-    event.map.resize();
+  //   event.map.resize();
 
-  }
+  // }
 }

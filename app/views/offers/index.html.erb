@@ -8,7 +8,7 @@
         <%# insert offer card  %>
         <div class="container" style="zoom: 45%">
           <div class="card-offer">
-            <div class="card-left">
+            <div class="card-left-offer">
               <%= cl_image_tag offer.club.photo.key, alt:"club coat of arms", class:"card__image img_club"%>
               <p class="card__name"><%= offer.title %>
               </p>
@@ -21,7 +21,7 @@
                 <%= offer.description %></p>
             </div>
             <div class="titles-offer">
-              <div class="title-offer text-center p-2">
+              <div class="title-offer text-center">
                 <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
               </div>
@@ -40,14 +40,14 @@
     <% @offers.each do |offer| %>
       <div class="right-container card-offer pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
         <div class="grid-container">
-          <div class="description-offer">
+          <div class="description-offer-left mb-5">
             <%= offer.description %>
           </div>
-          <div class="description map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div class="map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
           <div class="titles-offer-right">
             <a class="btn btnh" data-apply-target="contact"
-             href= "<%= new_club_message_path(offer.club) %>">Contact
+             href= "<%= new_club_message_path(offer.club) %>"><i class="fa-regular fa-envelope"></i>   Contact
             </a>
             <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
               href= "<%= new_offer_application_path(offer) %>">
@@ -57,4 +57,3 @@
       </div>
     <% end %>
   </div>
-
