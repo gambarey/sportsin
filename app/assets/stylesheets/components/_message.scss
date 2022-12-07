@@ -1,9 +1,12 @@
 .message {
-  height: 25vh;
-  display: inline-block;
-  padding: 5px;
-  background: blue;
+  //height: 25vh;
+  //display: inline-block;
+  padding: 15px 20px;
+  background: #1E2F39;
   border: none;
+  width: 100%;
+  border-radius: 5px;
+  color: #eaf3e9;
 }
 
 // .messages {
@@ -11,4 +14,8 @@
 // }
 .text__white{
   color: white;
+}
+.green-text{
+  color: #22ecae;
+  size: 1.5em;
 }
