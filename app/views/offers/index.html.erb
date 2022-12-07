@@ -10,7 +10,7 @@
           <div class="card-offer">
             <div class="card-left-offer">
               <%= cl_image_tag offer.club.photo.key, alt:"club coat of arms", class:"card__image img_club"%>
-              <p class="card__name"><%= offer.title %>
+              <p class="card__name-offer"><%= offer.title %>
               </p>
               <div class="sport">
                 <%= "#{offer.fee} €" %>
@@ -18,7 +18,7 @@
             </div>
             <div class="grid-container">
               <div class="description-offer">
-                <%= offer.description %></p>
+                <%= offer.description[0..90] ... %></p>
             </div>
             <div class="titles-offer">
               <div class="title-offer text-center">
@@ -47,11 +47,13 @@
           </div>
           <div class="titles-offer-right">
             <a class="btn btnh" data-apply-target="contact"
-             href= "<%= new_club_message_path(offer.club) %>"><i class="fa-regular fa-envelope"></i>   Contact
+             href= "<%= new_club_message_path(offer.club) %>">
+              <i class="fa-regular fa-envelope"></i>   Contact
             </a>
             <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
               href= "<%= new_offer_application_path(offer) %>">
-            Apply</a>
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>   Apply
+            </a>
           </div>
         </div>
       </div>
