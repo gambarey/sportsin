@@ -91,15 +91,14 @@ p, h1, h2 {
   border: 2px solid #22ecae;
   border-radius: 5px;
   display: flex;
-  margin: 0px 27px;
+  margin: 10px 27px;
   height: 60px;
 }
 
 .titles {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10%;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .body-content {
