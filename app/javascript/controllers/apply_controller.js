@@ -17,19 +17,18 @@ displayInfo(event) {
   this.sidePaneTargets[index].classList.remove("d-none")
 }
 
-  // update(event) {
-  //   // event.preventDefault()
-  //   const url = this.more_info_btnTarget.action
-  //   fetch(url, {
-  //     method: "GET",
-  //     headers: { "Accept": "text/plain" },
-  //     body: new FormData(this.side_paneTarget)
-  //   })
-  //     .then(response => response.text())
-  //     .then((data) => {
-  //       this.side_paneTarget.outerHTML = data
-  //     })
-  // }
+  update(event) {
+    event.preventDefault()
+    const url = "/applications/23?status=1"
+    fetch(url, {
+      method: "PATCH",
+      headers: { "Accept": "text/plain" },
+    })
+      // .then(response => response.text())
+      // .then((data) => {
+      //   this.side_paneTarget.outerHTML = data
+      // })
+  }
 
   createApplication() {
     const url = this.applyBtnTarget.action

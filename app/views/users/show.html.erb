@@ -1,7 +1,9 @@
 <div class="container">
   <div class='home-cards__container'>
     <div class="card-left">
+    <% if @user.photo.attached? %>
       <%= cl_image_tag @user&.photo.key, class:"card__image" %>
+      <% end %>
       <div class='card-left__name'>
         <p class="card__name"><%= @user.name %> <%= @user.last_name %></p>
         <p class="sport"><%= @user.sport.name %></p>

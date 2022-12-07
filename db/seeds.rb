@@ -109,7 +109,7 @@ offer1 = Offer.create(
   title: 'Needed libero in Sevilla C.D',
   location: 'Sevilla',
   description: 'Lets win the Liga. We need a Libero for our volleyball team.
-  Join our volleyball club and take your game to the next level! Our experienced coaches and trainers are here to help you become the best player you can be. We offer a variety of programs and training sessions to meet all skill levels. We also have a wide range of competitive leagues and tournaments to challenge your abilities. Come and join our family and get ready to have some fun!',
+  Join our volleyball club and take your game to the next level! Our experienced coaches and trainers are here to help you become the best player you can be.',
   fee: 30000,
   club_id: club4.id
 )
@@ -291,7 +291,7 @@ application2 = Application.create(
 puts "application2 created!"
 application3 = Application.create(
   status: 0,
-  user_id: user3.id,
+  user_id: user2.id,
   offer_id: offer4.id
 )
 puts "application3 created!"
