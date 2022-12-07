@@ -5,24 +5,24 @@
   <% @applications.each do |application| %>
     <%# insert offer card  %>
     <div class="container myapps_cont">
-      <div class="card ">
-        <div class="card-left no_wrap">
-          <%= cl_image_tag application.offer.club.photo.key, class:"card__image img_club", alt:"club"%>
-          <p class="card__name"><%= application.offer.title %>
-          </p>
-          <div class="sport">
-            <p><%= application.offer.club.name %></p>
-          </div>
+      <div class="card__myapplications ">
+        <div class="card-left__myapps">
+          <%= cl_image_tag application.offer.club.photo.key, class:"card__image img_club img__club_myapps", alt:"club"%>
         </div>
-        <div class="grid-container">
-          <div class="description des_club">
+        <div class="grid-container__myapps">
+          <div class="offerTitle_myapps">
+            <h3 class="card__name_myapplications"><%= application.offer.title %></h3>
             <p><%= application.offer.description %></p>
+            <p class="green-text"><%= application.offer.club.name %></p>
           </div>
-          <div class="titles">
-            <div class="title status">
-              <p><%= application.status %></p>
+          <div class="description des_club">
+          </div>
+          <div class="titles__myapps">
+            <div class="title status_myapps">
+              <p class="green-text">Status: <span class="text-white"><%= application.status.capitalize %></span></p>
             </div>
-            <div class="title created">
+
+            <div class="title created_myapps">
               <p><%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
             </div>
           </div>
