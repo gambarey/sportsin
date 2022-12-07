@@ -13,11 +13,13 @@
             <p class="green-text"><%= application.offer.club.name %></p>
             <p><%= application.offer.description %></p>
             <p>Created: <%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
-          </div>
-          <div class="titles__myapps">
-            <div class="title_status_myapps">
-              <p class="green-text">Status: <span class="text-white"><%= application.status.capitalize %></span></p>
-            </div>
+            <% if  application.pending? %>
+              <p class="text__white">Status: <span class="text-white"><%= application.status.capitalize %></span></p>
+            <% elsif application.accepted? %>
+              <p class="text__white">Status: <span class="green-text"><%= application.status.upcase %></span></p>
+            <% elsif application.rejected? %>
+              <p class="text__white">Status: <span class="red-text"><%= application.status.upcase %></span></p>
+            <% end %>
           </div>
         </div>
       </div>
