@@ -4,6 +4,20 @@ p, h1, h2 {
   font-family: Montserrat, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.card {
+  background-color: #2F4858;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 70vw;
+  //height: 40vh;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #eaf3e9;
+  justify-content: space-between;
+}
+
 .card-left {
   border-radius: 5px;
   background-color: #1E2F39;
@@ -43,19 +57,6 @@ p, h1, h2 {
 .grid-container {
   flex-grow: 1;
   margin: 30px;
-}
-.card {
-  background-color: #2F4858;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 70vw;
-  //height: 40vh;
-  margin: 25px;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #eaf3e9;
-  justify-content: space-between;
 }
 .card__name {
   margin-top: 17px;
@@ -325,4 +326,53 @@ h1 {
 .card__name-titles {
   font-size: 1em;
   padding-top: 20px;
+}
+// :::My Applications:::
+
+.card__myapplications {
+  background-color: #2F4858;
+  border-radius: 5px;
+  color: white;
+  width: 70vw;
+  //height: 40vh;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__name_myapplications {
+  margin-top: 17px;
+  font-size: 1em;
+  line-height: 28px;
+  margin-bottom: 2px;
+}
+.card-left__myapps {
+  border-radius: 5px;
+  background-color: #1E2F39;
+  width: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img__club_myapps{
+  width: 120px;
+}
+.myapps_cont {
+
+}
+.grid-container__myapps{
+  background-color: #1E2F39;
+}
+.titles__myapps{
+  display: flex;
+
+}
+.created_myapps{
+
+}
+.club_name{
+  font-size: 1.3em;
+  color: #22ecae;
 }
