@@ -1,7 +1,7 @@
 .map {
 
   height: 70vh;
-  margin: 0 auto;
+  // margin: 0 auto;
   height: 600px;
 }
 
@@ -14,10 +14,10 @@
   border: 2px solid #22ecae;
   font-size: large ;
   border-radius: 5px;
-  display: flex;
+  // display: flex;
   margin: 5px;
   margin: 0px 27px;
-  width: 80%;
+  width: 90%;
 }
 
 .titles-offer {
@@ -77,6 +77,27 @@
   border-radius: 5px;
   background-color: #1E2F39;
   padding: 9px;
-  font-size: 20px;
+  font-size: 30px;
+  width: 750px;
   margin: 0 auto;
+}
+
+.description-offer-left {
+  border: 2px solid #22ecae;
+  height: 30vh;
+  border-radius: 5px;
+  background-color: #1E2F39;
+  padding: 9px;
+  font-size: 40px;
+  margin: 0 auto;
+}
+
+.card-left-offer {
+  border-radius: 5px;
+  background-color: #1E2F39;
+  width: 35%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

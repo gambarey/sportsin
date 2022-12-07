@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: %i[show destroy]
+
   def new
     @offer = Offer.new
     @user = current_user
@@ -8,12 +9,9 @@ class OffersController < ApplicationController
   def create
     @user = current_user
     @offer = Offer.new(offer_params)
-    # @offer.user = @user
-    # @offer.user = current_user
-    # @offer.status = false
-     @offer.club = current_user.owned_club
+    @offer.club = current_user.owned_club
     if @offer.save
-      redirect_to offers_path, notice: 'offer was successfully created'
+      redirect_to offers_path, notice: "offer was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,20 +35,12 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all
     end
-
-    # @marker =
-    #   {
-    #     lat: @current_offer.geocode[0],
-    #     lng: @current_offer.geocode[1]
-    #     # info_window: render_to_string(partial: "info_window", locals: {offer: offer})
-    #   }
-
   end
 
   def destroy
     @offer.destroy
 
-    redirect_to offers_path, notice: 'offer was successfully destroyed'
+    redirect_to offers_path, notice: "offer was successfully destroyed"
   end
 
   private
