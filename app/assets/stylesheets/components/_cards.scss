@@ -90,14 +90,12 @@ p, h1, h2 {
   border: 2px solid #22ecae;
   border-radius: 5px;
   display: flex;
-  margin: 5px;
   margin: 0px 27px;
+  height: 60px;
 }
 
 .titles {
   //height: 10vh;
-  margin-top: 20%;
-  margin-left: 35%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -109,18 +107,19 @@ p, h1, h2 {
 }
 
 .icard {
-  background-color: #2F4858;
+  background-color: #1E2F39;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
-  width: 70vw;
   //height: 40vh;
-  margin: 25px;
+  margin-top: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 1px solid #eaf3e9;
+  // border: 1px solid #eaf3e9;
   justify-content: space-evenly;
+  width: 1300px;
+  padding-bottom: 20px;
 
   h2 {
     width: 100vw;
@@ -295,6 +294,7 @@ h1 {
 .home-cards__container{
   display: flex;
   justify-content: space-between;
+  width: 1300px;
 }
 .images-users {
   display: flex;
@@ -324,4 +324,9 @@ h1 {
 .card__name-titles {
   font-size: 1em;
   padding-top: 20px;
+}
+
+.model {
+  margin-top: -5px;
+  margin-left: 5px;
 }

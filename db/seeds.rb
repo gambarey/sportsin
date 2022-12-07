@@ -233,13 +233,13 @@ puts "title6 created!"
 #Achievements ACHIEVEMENTS:
 
 achievement7 = Achievement.create(
-  name: 'Nominated to best defender in 2022',
+  name: 'Nominated to Best Blocker in 2022',
   user_id: user3.id,
   sort: "honor"
 )
 puts "achievement1 created!"
 achievement8 = Achievement.create(
-  name: 'Nominated toBest libero in 2021',
+  name: 'Nominated to Best Setter in 2021',
   user_id: user3.id,
   sort: "honor"
 )
@@ -247,14 +247,14 @@ puts "achievement2 created!"
 
 
 achievement9 = Achievement.create(
-  name: 'Nominated to Best defender in 2022',
+  name: 'Nominated to Best Defender in 2022',
   user_id: user3.id,
   sort: "honor"
 )
 puts "achievement3 created!"
 
 achievement10 = Achievement.create(
-  name: 'Nominated to Best libero in 2021',
+  name: 'Nominated to Best Setter in 2021',
   user_id: user3.id,
   sort: "honor"
 )
@@ -268,7 +268,7 @@ achievemen11 = Achievement.create(
 puts "achievement5 created!"
 
 achievement12 = Achievement.create(
-  name: 'Winner of the Volleyball cup in Peru',
+  name: 'MVP from Spain League',
   user_id: user3.id,
   sort: "honor"
 )
