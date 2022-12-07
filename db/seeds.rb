@@ -295,3 +295,32 @@ application3 = Application.create(
   offer_id: offer4.id
 )
 puts "application3 created!"
+
+club_history = ClubHistory.create(
+  club_id: club4.id,
+  user_id: user3.id,
+  start_date: "2021-12-07",
+  end_date: "2023-12-07",
+  jersey_number: 1
+)
+
+puts "club_history1 created!"
+
+club_history2 = ClubHistory.create(
+  club_id: club5.id,
+  user_id: user3.id,
+  start_date: "2019-12-07",
+  end_date: "2020-12-07",
+  jersey_number: 1
+)
+puts "club_history2 created!"
+
+club_history2 = ClubHistory.create(
+  club_id: club6.id,
+  user_id: user3.id,
+  start_date: "2018-12-07",
+  end_date: "2029-12-07",
+  jersey_number: 1
+)
+
+puts "club_history3 created!"
