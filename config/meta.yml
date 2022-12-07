@@ -1,0 +1,5 @@
+meta_name: "SportsIn"
+meta_title: "SportsIn - Social network for sports professionals"
+meta_description: "Network and connect with other sports professionals: athletes, managers, sponsors etc"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+# twitter_account: "@your_twitter_account"   # required for Twitter Cards
