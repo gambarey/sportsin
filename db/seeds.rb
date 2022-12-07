@@ -108,8 +108,9 @@ puts "club5 created!"
 offer1 = Offer.create(
   title: 'Needed libero in Sevilla C.D',
   location: 'Sevilla',
-  description: 'Lets win the Liga. We need a Libero for our volleyball team',
-  fee: 3000,
+  description: 'Lets win the Liga. We need a Libero for our volleyball team.
+  Join our volleyball club and take your game to the next level! Our experienced coaches and trainers are here to help you become the best player you can be. We offer a variety of programs and training sessions to meet all skill levels. We also have a wide range of competitive leagues and tournaments to challenge your abilities. Come and join our family and get ready to have some fun!',
+  fee: 30000,
   club_id: club4.id
 )
   puts "offer1 created!"
@@ -117,8 +118,8 @@ offer1 = Offer.create(
 offer6 = Offer.create(
   title: 'Needed Setter in Paris V. C.',
   location: 'Paris',
-  description: 'We need a Setter for our volleyball team. Urgent!',
-  fee: 9000,
+  description: 'We need a Setter for our volleyball team. Urgent! Join our team as a Professional Volleyball Player and help us reach our goals of becoming a top-tier team!',
+  fee: 35000,
   club_id: club6.id
 )
 puts "offer6 created!"
@@ -126,8 +127,8 @@ puts "offer6 created!"
 offer7 = Offer.create(
   title: 'Needed Outside Hitter in Paris V. C.',
   location: 'Paris',
-  description: 'We need a Outside Hitter for our volleyball team. Urgent!',
-  fee: 10000,
+  description: 'We need a Outside Hitter for our volleyball team. Urgent!  Exciting opportunity for an experienced Volleyball Player to join a fast-growing and successful professional volleyball organization!',
+  fee: 45000,
   club_id: club6.id
 )
 puts "offer7 created!"
@@ -135,8 +136,8 @@ puts "offer7 created!"
 offer2 = Offer.create(
   title: 'Needed setter player for Sevilla C.D',
   location: 'Sevilla',
-  description: 'Our team needs a setter position player for our team in Seville',
-  fee: 1000,
+  description: 'Our team needs a setter position player for our team in Seville. Join our Professional Volleyball Club as a High-Level Athlete, competing at the highest level of the sport.',
+  fee: 25000,
   club_id: club4.id
 )
 puts "offer2 created!"
@@ -144,8 +145,8 @@ puts "offer2 created!"
 offer8 = Offer.create(
   title: 'Needed setter player for Lisbon Volley',
   location: 'Lisbon',
-  description: 'Our team needs a setter position player for our team in Lisbon',
-  fee: 10000,
+  description: 'Our team needs a setter position player for our team in Lisbon. Work under the supervision of our expert coaching staff to hone your skills and reach your maximum potential.',
+  fee: 20000,
   club_id: club7.id
 )
 puts "offer8 created!"
@@ -153,8 +154,8 @@ puts "offer8 created!"
 offer9 = Offer.create(
   title: 'Needed Oposite player for Lisbon Volley',
   location: 'Lisbon',
-  description: 'Our team needs a oposite position player for our team in Lisbon',
-  fee: 12000,
+  description: 'Our team needs a oposite position player for our team in Lisbon. Represent the club in a positive manner, both on and off the court',
+  fee: 22000,
   club_id: club7.id
 )
 puts "offer9 created!"
@@ -163,7 +164,7 @@ offer3 = Offer.create(
   title: 'Cuenca C.D needs a libero',
   location: 'Cuenca',
   description: 'Urgent Libero needed',
-  fee: 2000,
+  fee: 20000,
   club_id: club5.id
 )
 puts "offer3 created!"
@@ -171,8 +172,8 @@ puts "offer3 created!"
 offer4 = Offer.create(
   title: 'Looking for a Middle Blocker at Sevilla C.D',
   location: 'Sevilla',
-  description: 'Our team needs a Middle Blocker position player for our team in Seville',
-  fee: 1000,
+  description: 'Our team needs a Middle Blocker position player for our team in Seville. Work with the team to create positive team dynamics and develop camaraderie.',
+  fee: 15000,
   club_id: club4.id
 )
 puts "offer4 created!"
@@ -180,8 +181,8 @@ puts "offer4 created!"
 offer5 = Offer.create(
   title: 'Looking for a Setter at Berlin B.R.',
   location: 'Berlin',
-  description: 'Our team needs a Setter position player for our team in Berlin',
-  fee: 10000,
+  description: 'Our team needs a Setter position player for our team in Berlin. Maintain high standards of sportsmanship and fair play while competing.',
+  fee: 30000,
   club_id: club5.id
 )
 puts "offer5 created!"
@@ -232,13 +233,13 @@ puts "title6 created!"
 #Achievements ACHIEVEMENTS:
 
 achievement7 = Achievement.create(
-  name: 'Nominated to best defender in 2022',
+  name: 'Nominated to Best Blocker in 2022',
   user_id: user3.id,
   sort: "honor"
 )
 puts "achievement1 created!"
 achievement8 = Achievement.create(
-  name: 'Nominated toBest libero in 2021',
+  name: 'Nominated to Best Setter in 2021',
   user_id: user3.id,
   sort: "honor"
 )
@@ -246,14 +247,14 @@ puts "achievement2 created!"
 
 
 achievement9 = Achievement.create(
-  name: 'Nominated to Best defender in 2022',
+  name: 'Nominated to Best Defender in 2022',
   user_id: user3.id,
   sort: "honor"
 )
 puts "achievement3 created!"
 
 achievement10 = Achievement.create(
-  name: 'Nominated to Best libero in 2021',
+  name: 'Nominated to Best Setter in 2021',
   user_id: user3.id,
   sort: "honor"
 )
@@ -267,7 +268,7 @@ achievemen11 = Achievement.create(
 puts "achievement5 created!"
 
 achievement12 = Achievement.create(
-  name: 'Winner of the Volleyball cup in Peru',
+  name: 'MVP from Spain League',
   user_id: user3.id,
   sort: "honor"
 )
