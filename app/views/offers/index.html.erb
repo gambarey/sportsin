@@ -38,7 +38,7 @@
   </div>
   <div class="right-container card-offer-right w-40 p-2" style="zoom: 45%">
     <% @offers.each do |offer| %>
-      <div class="right-container card-offer pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
+      <div class="right-container pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
         <div class="grid-container">
           <div class="description-offer-left mb-5">
             <%= offer.description %>
@@ -58,4 +58,23 @@
         </div>
       </div>
     <% end %>
+     <div class="right-container pane w-40 h-100 p-2" data-apply-target="sidePane">
+        <div class="grid-container">
+          <div class="description-offer-left mb-5">
+            <%= @offers.first.description %>
+          </div>
+          <div class="map" data-controller="map" data-map-marker-value="<%=  { lat: @offers.first.latitude, lng: @offers.first.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+          <div class="titles-offer-right">
+            <a class="btn btnh" data-apply-target="contact"
+             href= "<%= new_club_message_path(@offers.first.club) %>">
+              <i class="fa-regular fa-envelope"></i>   Contact
+            </a>
+            <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
+              href= "<%= new_offer_application_path(@offers.first) %>">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>   Apply
+            </a>
+          </div>
+        </div>
+      </div>
   </div>

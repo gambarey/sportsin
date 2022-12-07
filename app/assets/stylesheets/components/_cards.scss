@@ -196,34 +196,6 @@ h1 {
   font-family: nunito;
   }
 
-.card-offer {
-  background-color: #2F4858;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 70vw;
-  height: 50vh;
-  margin: 25px;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #eaf3e9;
-  justify-content: space-between;
-}
-
-.card-offer-right {
-  background-color: #2F4858;
-  // border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 70vw;
-  // height: 60vh;
-  margin: 25px;
-  display: flex;
-  flex-direction: row;
-  border-left: 1px solid #eaf3e9;
-  justify-content: space-between;
-}
-
 .pane {
   border: none;
 }
