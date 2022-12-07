@@ -10,9 +10,11 @@ require "open-uri"
 
 Achievement.destroy_all
 Application.destroy_all
-User.destroy_all
+Message.destroy_all
 Offer.destroy_all
+ClubHistory.destroy_all
 Club.destroy_all
+User.destroy_all
 Sport.destroy_all
 
 
