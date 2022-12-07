@@ -1,5 +1,5 @@
 class ApplicationsController < ApplicationController
-  before_action :set_offer, only: %i[new create]
+  before_action :set_offer, only: %i[new create update]
   def new
     @application = Application.new
   end
@@ -24,6 +24,9 @@ class ApplicationsController < ApplicationController
   end
 
   def update
+    #need to find the applications throw params
+    # @offer.status =
+    #
   end
 
   private
