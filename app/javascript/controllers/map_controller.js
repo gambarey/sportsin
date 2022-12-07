@@ -13,10 +13,10 @@ console.log(this.markerValue)
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
       center: [this.markerValue.lng, this.markerValue.lat],
-      zoom: 12,
+      zoom: 8,
     });
     this.#addMarkerToMap();
-
+    // this.#fitMapToMarkers();
   }
 
   #addMarkerToMap() {
@@ -26,5 +26,15 @@ console.log(this.markerValue)
       .addTo(this.map);
   }
 
+  // #fitMapToMarkers() {
+  //   const bounds = new mapboxgl.LngLatBounds()
+  //   this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+  //   this.map.fitBounds(bounds, { padding: 10, maxZoom: 25, duration: 0 })
+  // }
 
+  onMapLoaded(event) {
+
+    event.map.resize();
+
+  }
 }
