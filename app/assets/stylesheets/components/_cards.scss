@@ -96,12 +96,12 @@ p, h1, h2 {
 
 .titles {
   //height: 10vh;
-  margin-top: 20%;
-  margin-left: 35%;
+  margin-top: 10%;
+  margin-left: 5%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25%;
 }
 
 .body-content {
@@ -202,7 +202,7 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.7);
   color: white;
   width: 70vw;
-  height: 60vh;
+  height: 50vh;
   margin: 25px;
   display: flex;
   flex-direction: row;
@@ -239,8 +239,13 @@ h1 {
 }
 
 .map {
-  height: 30vh;
+  height: 70vh;
   margin: 0 auto;
+}
+
+.mapboxgl-canvas{
+  width:100% !important;
+  height:100% !important
 }
 
 .title-offer {
@@ -250,15 +255,16 @@ h1 {
   display: flex;
   margin: 5px;
   margin: 0px 27px;
+  width: 80%;
 }
 
 .titles-offer {
   //height: 10vh;
-  margin-top: 35px;
-  width: 100%;
+  margin: 0 auto;
+  width: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 40%;
 }
 
 .title-offer-big {

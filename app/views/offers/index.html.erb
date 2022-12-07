@@ -21,16 +21,15 @@
                 <%= offer.description %></p>
             </div>
             <div class="titles">
-              <div class="title-offer">
+              <div class="title-offer text-center p-2">
                 <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
               </div>
-              <div class="title-offer-big btn btn-primary" >
-                <a href="#" data-action="click->apply#displayInfo" id="<%= index %>" >
-                  <%# <span class="icon"><i class="fa fa-id-card"></i></span> %>
-                  <span class="text">More info</span>
-                </a>
-              </div>
+              <a class="btn btnh" data-action="click->apply#displayInfo" id="<%= index %>">
+                <%# <a href="#"  > %>
+                <%# <span class="icon"><i class="fa fa-id-card"></i></span> %>
+                <span class="text">More info</span>
+              </a>
             </div>
           </div>
         </div>
@@ -47,12 +46,12 @@
           <div class="description map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
           <div class="titles-offer">
-            <div class="title-offer-big btn btn-primary" data-apply-target="contact">
-              <%= link_to "Contact", new_club_message_path(offer.club)%>
-            </div>
-            <div class="title-offer-big btn btn-primary" data-apply-target="applyBtn" action="click->apply#createApplication">
-              <%= link_to "Apply", new_offer_application_path(offer) %>
-            </div>
+            <a class="btn btnh" data-apply-target="contact"
+             href= "<%= new_club_message_path(offer.club) %>">Contact
+            </a>
+            <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
+              href= "<%= new_offer_application_path(offer) %>">
+            Apply</a>
           </div>
         </div>
       </div>
