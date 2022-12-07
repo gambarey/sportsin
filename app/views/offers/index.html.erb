@@ -20,7 +20,7 @@
               <div class="description-offer">
                 <%= offer.description %></p>
             </div>
-            <div class="titles">
+            <div class="titles-offer">
               <div class="title-offer text-center p-2">
                 <%= offer.created_at.strftime("%a %b %e at %l:%M %p") %> <br>
                 <%= offer.location %>
@@ -45,7 +45,7 @@
           </div>
           <div class="description map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-          <div class="titles-offer">
+          <div class="titles-offer-right">
             <a class="btn btnh" data-apply-target="contact"
              href= "<%= new_club_message_path(offer.club) %>">Contact
             </a>

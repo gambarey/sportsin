@@ -260,11 +260,36 @@ h1 {
 
 .titles-offer {
   //height: 10vh;
-  margin: 0 auto;
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40%;
+  // margin: 0 auto;
+  // width: 60%;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 40%;
+
+    //height: 10vh;
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25%;
+}
+
+.titles-offer-right {
+  //height: 10vh;
+  // margin: 0 auto;
+  // width: 60%;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 40%;
+
+    //height: 10vh;
+    margin-top: 10%;
+    margin-left: 12%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15%;
 }
 
 .title-offer-big {
