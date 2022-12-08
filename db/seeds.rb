@@ -307,7 +307,7 @@ application5 = Application.create(
   user_id: user4.id,
   offer_id: offer7.id
 )
-puts "application5 created!
+puts "application5 created!"
 
 club_history = ClubHistory.create(
   club_id: club4.id,
@@ -315,7 +315,7 @@ club_history = ClubHistory.create(
   start_date: "2021-12-07",
   end_date: "2023-12-07",
   jersey_number: 1
-)
+).
 
 puts "club_history1 created!"
 
