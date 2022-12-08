@@ -51,7 +51,7 @@ puts "user2 created!"
 user4 = User.create(
   name: 'Joao',
   last_name: 'Smith',
-  position: 'Manager',
+  position: 'Oposite',
   description: 'Owner of Lisboa',
   sport_id: sport2.id,
   email: 'joao@sportsin.com',
@@ -129,7 +129,7 @@ offer7 = Offer.create(
   location: 'Paris',
   description: 'We need a Outside Hitter for our volleyball team. Urgent!  Exciting opportunity for an experienced Volleyball Player to join a fast-growing and successful professional volleyball organization!',
   fee: 45000,
-  club_id: club6.id
+  club_id: club5.id
 )
 puts "offer7 created!"
 
