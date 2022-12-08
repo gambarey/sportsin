@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def honors
     achievements.select(&:honor?)
   end
+
+  def my_club_applications
+    owned_club.applications
+  end
 end

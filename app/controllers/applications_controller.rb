@@ -1,11 +1,12 @@
 class ApplicationsController < ApplicationController
-  before_action :set_offer, only: %i[new create update]
+  before_action :set_offer, only: %i[new create]
   def new
     @application = Application.new
   end
 
   def index
-    @applications = Application.all
+    @my_applications = current_user.applications
+    @my_club_applications = current_user.my_club_applications
   end
 
   def create
@@ -24,15 +25,19 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-    #need to find the applications throw params
-    # @offer.status =
-    #
+    @application = Application.find(params[:id])
+    parameters = application_params
+    parameters[:status] = parameters[:status].to_i
+    @application.update(parameters)
   end
 
   private
 
   def set_offer
-  @offer = Offer.find(params[:offer_id])
+    @offer = Offer.find(params[:offer_id])
   end
 
+  def application_params
+    params.require(:application).permit(:offer_id, :user_id, :status)
+  end
 end

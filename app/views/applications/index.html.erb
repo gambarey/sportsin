@@ -2,7 +2,7 @@
   <div class="titleb">
     <h1>My applications</h1>
   </div>
-  <% @applications.each do |application| %>
+  <% @my_applications.each do |application| %>
     <%# insert offer card  %>
     <div class="container myapps_cont">
       <div class="card__myapplications ">
@@ -28,38 +28,44 @@
   <div class="titleb">
     <h1>My Club Applications</h1>
   </div>
-  <% @applications.each do |application| %>
-    <% if application.offer.club_id = current_user.owned_club.id %>
-      <div class="container myapps_cont">
-        <div class="card__myapplications ">
-          <%= cl_image_tag application.offer.club.photo.key, class:"card__image img_club img__club_myapps", alt:"club"%>
-          <div class="grid-container__myapps">
-            <div class="offerTitle_myapps">
-              <h3><%= application.offer.title %></h3>
-              <p class="green-text"><%= application.offer.club.name %></p>
-              <p><%= application.offer.description %></p>
-              <p>Created: <%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
-              <p>Applied by: <%= link_to user_path(application.user) do %>
-              <%= application.user.name %> <%= application.user.last_name %>
+  <% @my_club_applications.each do |application|  %>
+    <div class="container myapps_cont">
+      <div class="card__myapplications ">
+        <%= cl_image_tag application.offer.club.photo.key, class:"card__image img_club img__club_myapps", alt:"club"%>
+        <div class="grid-container__myapps">
+          <div class="offerTitle_myapps">
+            <h3><%= application.offer.title %></h3>
+            <p class="green-text"><%= application.offer.club.name %></p>
+            <p><%= application.offer.description %></p>
+            <p>Created: <%= application.created_at.strftime("%a %b %e at %l:%M %p") %></p>
+            <p>Applied by: <%= link_to user_path(application.user) do %>
+                <%= application.user.name %> <%= application.user.last_name %>
               <% end %>
-              </p>
-              <% if  application.pending? %>
-              <div class="btns">
-              <div class="btna">Accept Offer
+            </p>
+            <% if application.pending? %>
+              <div class="btns" data-controller="apply" data-apply-id-value="<%= application.id %>">
+                <%= simple_form_for [application],
+                 html: { data: { apply_target: "accept" }} do |f| %>
+                  <div class="btna" data-action="click->apply#accept">Accept Offer
+                  </div>
+                    <%= f.input :status, input_html: {value: 1, class:"d-none"}  %>
+                <% end %>
+                <%= simple_form_for [application],
+                   html: { data: { apply_target: "reject" }} do |f| %>
+                  <div class="btna" data-action="click->apply#reject">Decline Offer
+                    <%= f.input :status, input_html: {value: 2, class:"d-none"}  %>
+                  </div>
+                <% end %>
               </div>
-              <div class="btna">Decline Offer
-              </div>
-              </div>
-                <p class="text__white">Status: <span class="text-white"><%= application.status.capitalize %></span></p>
-              <% elsif application.accepted? %>
-                <p class="text__white">Status: <span class="green-text"><%= application.status.upcase %></span></p>
-              <% elsif application.rejected? %>
-                <p class="text__white">Status: <span class="red-text"><%= application.status.upcase %></span></p>
-              <% end %>
-            </div>
+              <p class="text__white">Status: <span class="text-white"><%= application.status.capitalize %></span></p>
+            <% elsif application.accepted? %>
+              <p class="text__white">Status: <span class="green-text"><%= application.status.upcase %></span></p>
+            <% elsif application.rejected? %>
+              <p class="text__white">Status: <span class="red-text"><%= application.status.upcase %></span></p>
+            <% end %>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
