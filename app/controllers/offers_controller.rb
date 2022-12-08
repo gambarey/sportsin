@@ -22,7 +22,7 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all.reverse
+    @offers = Offer.includes(:club).all
     # @current_offer = @offers.first
 
     if params[:query].present?
