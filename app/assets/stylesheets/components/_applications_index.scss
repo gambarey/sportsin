@@ -79,8 +79,10 @@
   height: -6px;
   align-items: center;
   padding: 7px 9px;
-  display: inline;
   color: #1E2F39;
+  width: 50%;
+  height: 80%;
+  text-align: center;
  }
 
  .btna:hover {
@@ -92,4 +94,11 @@
 
  .btns {
   margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
  }
+
+ .bodyp form {
+  width: 350px !important;
+  margin-top: 20px !important;
+}

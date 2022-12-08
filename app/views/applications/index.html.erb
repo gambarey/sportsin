@@ -2,7 +2,7 @@
   <div class="titleb">
     <h1>My applications</h1>
   </div>
-  <% @my_applications.each do |application| %>
+  <% @my_applications.reverse.each do |application| %>
     <%# insert offer card  %>
     <div class="container myapps_cont">
       <div class="card__myapplications ">
@@ -48,12 +48,12 @@
                  html: { data: { apply_target: "accept" }} do |f| %>
                   <div class="btna" data-action="click->apply#accept">Accept Offer
                   </div>
-                  <%= f.input :status, input_html: {value: 1, class:"d-none"}  %>
+                  <%= f.input :status, input_html: {value: 1, class:"d-none"}, label: false  %>
                 <% end %>
                 <%= simple_form_for [application],
                    html: { data: { apply_target: "reject" }} do |f| %>
                   <div class="btna" data-action="click->apply#reject">Decline Offer
-                    <%= f.input :status, input_html: {value: 2, class:"d-none"}  %>
+                    <%= f.input :status, input_html: {value: 2, class:"d-none"}, label: false  %>
                   </div>
                 <% end %>
               </div>
