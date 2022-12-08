@@ -38,7 +38,7 @@ user1 = User.create(name: 'Manuel', last_name: 'Sánchez', position: 'Striker', 
 puts "user1 created!"
 
 user2 = User.create(
-  name: 'Maria',
+  name: 'Pablo',
   last_name: 'Smith',
   position: 'Manager',
   description: 'Owner of Barcelona',
@@ -131,7 +131,7 @@ offer7 = Offer.create(
   location: 'Paris',
   description: 'We need a Outside Hitter for our volleyball team. Urgent!  Exciting opportunity for an experienced Volleyball Player to join a fast-growing and successful professional volleyball organization!',
   fee: 45000,
-  club_id: club5.id
+  club_id: club6.id
 )
 puts "offer7 created!"
 
@@ -180,14 +180,14 @@ offer4 = Offer.create(
 )
 puts "offer4 created!"
 
-offer5 = Offer.create(
-  title: 'Looking for a Setter at Berlin B.R.',
-  location: 'Berlin',
-  description: 'Our team needs a Setter position player for our team in Berlin. Maintain high standards of sportsmanship and fair play while competing.',
-  fee: 30000,
-  club_id: club5.id
-)
-puts "offer5 created!"
+# offer5 = Offer.create(
+#   title: 'Looking for a Setter at Cuenca C.R.',
+#   location: 'Berlin',
+#   description: 'Our team needs a Setter position player for our team in Berlin. Maintain high standards of sportsmanship and fair play while competing.',
+#   fee: 30000,
+#   club_id: club5.id
+# )
+# puts "offer5 created!"
 
 # achievements TITLES:
 
@@ -280,7 +280,7 @@ puts "achievement6 created!"
 application1 = Application.create(
   status: 0,
   user_id: user3.id,
-  offer_id: offer5.id
+  offer_id: offer6.id
 )
 puts "application1 created!"
 
