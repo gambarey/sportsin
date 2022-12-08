@@ -22,8 +22,8 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
-    @current_offer = @offers.first
+    @offers = Offer.all.reverse
+    # @current_offer = @offers.first
 
     if params[:query].present?
       sql_query = <<~SQL
