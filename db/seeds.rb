@@ -161,9 +161,9 @@ offer9 = Offer.create(
 puts "offer9 created!"
 
 offer3 = Offer.create(
-  title: 'Cuenca C.D needs a libero',
+  title: 'Cuenca C.D needs a setter',
   location: 'Cuenca',
-  description: 'Urgent Libero needed',
+  description: 'Urgent Setter needed',
   fee: 20000,
   club_id: club5.id
 )
@@ -245,7 +245,6 @@ achievement8 = Achievement.create(
 )
 puts "achievement2 created!"
 
-
 achievement9 = Achievement.create(
   name: 'Nominated to Best Defender in 2022',
   user_id: user3.id,
@@ -279,14 +278,14 @@ puts "achievement6 created!"
 application1 = Application.create(
   status: 0,
   user_id: user3.id,
-  offer_id: offer1.id
+  offer_id: offer5.id
 )
 puts "application1 created!"
 
 application2 = Application.create(
   status: 0,
   user_id: user3.id,
-  offer_id: offer3.id
+  offer_id: offer8.id
 )
 puts "application2 created!"
 application3 = Application.create(
@@ -295,6 +294,20 @@ application3 = Application.create(
   offer_id: offer4.id
 )
 puts "application3 created!"
+
+application4 = Application.create(
+  status: 0,
+  user_id: user1.id,
+  offer_id: offer3.id
+)
+puts "application4 created!"
+
+application5 = Application.create(
+  status: 0,
+  user_id: user4.id,
+  offer_id: offer7.id
+)
+puts "application5 created!
 
 club_history = ClubHistory.create(
   club_id: club4.id,
