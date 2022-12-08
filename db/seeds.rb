@@ -46,7 +46,9 @@ user2 = User.create(
   email: 'maria@sportsin.com',
   password: 123456
 )
-puts "user2 created!"
+managerfile2 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670494085/development/MariaSmith_kxg7a5.jpg")
+user2.photo.attach(io: managerfile2, filename: "MariaSmith_kxg7a5.jp", content_type: "image/jpg")
+puts "user2 manager created!"
 
 user4 = User.create(
   name: 'Joao',
@@ -70,7 +72,7 @@ user3 = User.create(
 )
 profile1 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670247074/development/FelipeSquare_mejord.png")
 user3.photo.attach(io: profile1, filename: "IMG_0861_sweidl.jpg", content_type: "image/jpg")
-puts "user3 created!"
+puts "user3 Felipe created!"
 
 # Clubs
 # club1 = Club.create(name: 'Lugo M.B', sport_id: sport5.id)
@@ -86,9 +88,9 @@ club4.photo.attach(io: club_photo4, filename: "umux94.png")
 club4.save
 puts "club4 created!"
 
-club_photo6 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670337401/development/DALL_E_2022-12-06_15.08.40_ke5mrb.png")
+club_photo6 = URI.open("https://res.cloudinary.com/daaaaanx5/image/upload/v1670498608/development/Paris_Logo_slh7zj.png")
 club6 = Club.new(name: 'Paris V. C.', sport_id: sport2.id, owner: user1)
-club6.photo.attach(io: club_photo6, filename: "ke5mrb.png.png")
+club6.photo.attach(io: club_photo6, filename: "slh7zj.png")
 club6.save
 puts "club6 created!"
 

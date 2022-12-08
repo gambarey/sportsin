@@ -62,7 +62,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.all
+    @messages = Message.includes([:user, :club]).all
   end
 
   def create
@@ -92,5 +92,5 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content)
   end
-  
+
 end

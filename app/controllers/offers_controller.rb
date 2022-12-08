@@ -22,7 +22,7 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all.reverse
+    # @offers = Offer.includes(:club).all
     # @current_offer = @offers.first
 
     if params[:query].present?
@@ -31,9 +31,9 @@ class OffersController < ApplicationController
         OR offers.description @@ :query
         OR offers.location @@ :query
       SQL
-      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+      @offers = Offer.includes(:club).where(sql_query, query: "%#{params[:query]}%")
     else
-      @offers = Offer.all
+      @offers = Offer.includes(:club).all
     end
   end
 
