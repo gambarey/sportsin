@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-start p-3">Inbox</h1>
   <div class="messages p-3">
-    <% Message.all.each do |message| %>
+    <% Message.all.reverse.each do |message| %>
       <div class="message" id="message-<%= message.id %>">
         <small>
           <strong>From: <span class="green-text"><%= message.user.name %></strong></span> <strong><span class="green-text"><%= message.user.last_name %></strong></span>
