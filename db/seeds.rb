@@ -315,7 +315,7 @@ club_history = ClubHistory.create(
   start_date: "2021-12-07",
   end_date: "2023-12-07",
   jersey_number: 1
-).
+)
 
 puts "club_history1 created!"
 
