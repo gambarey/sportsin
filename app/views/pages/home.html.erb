@@ -3,12 +3,12 @@
     <h1>SportsIn</h1>
     <p>Deals can be easy</p>
     <%# <% if current_user %>
-      <% if current_user %>
+    <% if current_user %>
       <%= link_to user_path(current_user), class: "btn btnh" do %>
-      Start now
+        Start now
       <% end %>
-       <% else %>
-       <%= link_to new_user_session_path, class: "btn btnh" do %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "btn btnh" do %>
         Start now
       <% end %>
     <% end %>
@@ -24,9 +24,15 @@
     <div class="l-card">
       <h4>FOR ATHLETES</h4>
       <h2>Find the club you always wanted to play for</h2>
-      <%= link_to new_user_session_path, class: "btn btnh btt" do %>
+      <% if current_user %>
+      <%= link_to user_path(current_user), class: "btn btnh" do %>
         Start now
       <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "btn btnh" do %>
+        Start now
+      <% end %>
+    <% end %>
     </div>
     <div class="r-card">
       <div class="fcard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/daaaaanx5/image/upload/v1670338489/development/run_h6mnub.jpg)">
@@ -53,9 +59,15 @@
     <div class="ld-card">
       <h4>FOR CLUBS</h4>
       <h2>Find the best players for the right position</h2>
-      <%= link_to new_user_session_path, class: "btn btnh btt" do %>
+      <% if current_user %>
+      <%= link_to user_path(current_user), class: "btn btnh" do %>
         Start now
       <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "btn btnh" do %>
+        Start now
+      <% end %>
+    <% end %>
     </div>
   </div>
 </div >
