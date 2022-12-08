@@ -62,7 +62,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.includes(:user, :club).all
+    @messages = Message.includes([:user, :club]).all
   end
 
   def create

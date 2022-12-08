@@ -7,7 +7,7 @@ class ApplicationsController < ApplicationController
   def index
     @applications = Application.includes(:offer, :user).all
   end
-
+  # (author: [{reviews: :user}, :nationality], :genre)
   def create
     @application = Application.new
     @application.offer = @offer
