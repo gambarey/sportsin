@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="apply"
 export default class extends Controller {
-  static targets = ["sidePane", "accept", "reject"] // Add the new target
+  static targets = ["sidePane", "accept", "reject", "status"] // Add the new target
   static values = {
     id: Number
   }
@@ -39,6 +39,11 @@ displayInfo(event) {
       method: "PATCH",
       body: new FormData(this.acceptTarget),
     })
+    debugger
+    this.acceptTarget.classList.add("d-none")
+    this.rejectTarget.classList.add("d-none")
+    this.statusTarget.innerText = "ACCEPTED"
+    this.statusTarget.classList.add("green-text")
   }
 
   reject() {
@@ -50,6 +55,11 @@ displayInfo(event) {
     // know the id of the application
     // patch request to the status
     // change the pending to reject status
+    this.acceptTarget.classList.add("d-none")
+    this.rejectTarget.classList.add("d-none")
+    this.statusTarget.innerText = "REJECTED"
+    this.statusTarget.classList.add("red-text")
+
   }
 
 }
