@@ -36,29 +36,30 @@
       </div>
     <% end %>
   </div>
-  <div class="right-container card-offer-right w-40 p-2" style="zoom: 45%">
-    <% @offers.reverse.each do |offer| %>
-      <div class="right-container pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
-        <div class="grid-container">
-          <div class="description-offer-left mb-5">
-            <%= offer.description %>
-          </div>
-          <div class="map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-          <div class="titles-offer-right">
-            <a class="btn btnh" data-apply-target="contact"
+  <% unless @offers.empty? %>
+    <div class="right-container card-offer-right w-40 p-2" style="zoom: 45%">
+      <% @offers.reverse.each do |offer| %>
+        <div class="right-container pane w-40 h-100 p-2 d-none" data-apply-target="sidePane">
+          <div class="grid-container">
+            <div class="description-offer-left mb-5">
+              <%= offer.description %>
+            </div>
+            <div class="map" data-controller="map" data-map-marker-value="<%=  { lat: offer.latitude, lng: offer.longitude }.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+            <div class="titles-offer-right">
+              <a class="btn btnh" data-apply-target="contact"
              href= "<%= new_club_message_path(offer.club) %>">
-              <i class="fa-regular fa-envelope"></i>   Contact
-            </a>
-            <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
-              href= "<%= new_offer_application_path(offer) %>">
-              <i class="fa-solid fa-arrow-up-from-bracket"></i>   Apply
-            </a>
+                <i class="fa-regular fa-envelope"></i>   Contact
+              </a>
+              <a class="btn btnh" data-apply-target="applyBtn" action="click->apply#createApplication"
+                href= "<%= new_offer_application_path(offer) %>">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>   Apply
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-     <div class="right-container pane w-40 h-100 p-2" data-apply-target="sidePane">
+      <% end %>
+      <div class="right-container pane w-40 h-100 p-2" data-apply-target="sidePane">
         <div class="grid-container">
           <div class="description-offer-left mb-5">
             <%= @offers.last.description %>
@@ -77,4 +78,5 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
+  <% end %>
